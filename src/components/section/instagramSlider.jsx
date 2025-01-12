@@ -10,7 +10,7 @@ import ShopCart from "@/assets/icons/shopCart";
 import { cn } from "@/lib/utils";
 import { staticBluarDataUrl } from "@/lib/staticBluarDataUrl";
 
-const ShopSlider = ({ text_muted, bg_muted }) => {
+const InsagramSlider = ({ text_muted, bg_muted }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -117,4 +117,4 @@ const ShopSlider = ({ text_muted, bg_muted }) => {
   );
 };
 
-export default ShopSlider;
+export default InsagramSlider;

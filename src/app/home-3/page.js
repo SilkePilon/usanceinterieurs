@@ -5,7 +5,7 @@ import Gallery from "@/components/section/gallery";
 import BannerThree from "@/components/section/heroes/bannerThree";
 import ProjectsSlider from "@/components/section/projectsSlider";
 import ServicesSlider from "@/components/section/servicesSlider";
-import ShopSlider from "@/components/section/shopSlider";
+import InsagramSlider from "@/components/section/instagramSlider";
 import Testimonial from "@/components/section/testimonial";
 import VideoPortfolio from "@/components/section/videoPortfolio";
 import TeamCardOne from "@/components/ui/cards/teamCardOne";
@@ -66,7 +66,7 @@ const Home3 = () => {
       {/* <ProjectsSlider /> */}
       <Testimonial />
       {/* Instagram posts */}
-      <ShopSlider data={productData.slice(0, 5)} />
+      <InsagramSlider data={productData.slice(0, 5)} />
 
       {/* -------- blog slider start */}
       {/* <section className="pt-20">
