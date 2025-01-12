@@ -79,7 +79,7 @@ const SectionTitle = ({
               {sectionDesc}
             </h5>
             {button_text && (
-              <Link href={link}>
+              <Link target="_blank" href={link}>
                 <ButtonOutline
                   className={cn(
                     `2sm:px-10 px-3 after:left-0 after:${bg_muted}`
