@@ -24,7 +24,7 @@ const Home3 = () => {
   return (
     <>
       <BannerThree />
-      {/* <AboutOne /> */}
+      <AboutOne />
       {/* <Counter /> */}
       {/* <Gallery /> */}
       {/* <ServicesSlider /> */}
@@ -38,7 +38,7 @@ const Home3 = () => {
             sectionDesc={
               "Where Imagination Takes Flight, and Excellence Blossoms"
             }
-            button_text={"All Architects"}
+            button_text={"Over Ons"}
             link={"/team"}
           />
         </div>
