@@ -52,7 +52,7 @@ const InsagramSlider = ({ text_muted, bg_muted }) => {
                 `px-[25px] py-2.5 flex items-center gap-2.5 border-white hover:border-primary text-white border-2 whitespace-nowrap relative z-10 overflow-hidden after:absolute after:left-0 after:top-0 after:bottom-0 after:z-[-1] after:bg-primary after:${bg_muted} after:w-0 after:transition-all after:duration-500 hover:after:w-full text-secondary-foreground hover:text-secondary-foreground transition-all duration-500`
               )}
             >
-              View on Instagram
+              Bekijk op Instagram
             </a>
           </div>
           <div className="relative after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:transition-all after:duration-500 after:group-hover:w-full after:group-hover:h-full after:group-hover:opacity-100 after:h-0 after:w-0 after:opacity-0 after:flex after:justify-center after:items-center after:bg-[rgba(37,_59,_47,_0.38)] after:group-hover:blur-sm">
@@ -77,10 +77,10 @@ const InsagramSlider = ({ text_muted, bg_muted }) => {
       <div className="container-fluid">
         <SectionTitle
           sectionName={"Instagram"}
-          sectionTitle={"Latest Posts"}
-          sectionDesc={"Follow our journey"}
-          link={"https://instagram.com/silke.pilon"}
-          button_text={"Follow"}
+          sectionTitle={"Laatste Posts"}
+          sectionDesc={"Volg ons op Instagram voor meer inspiratie"}
+          link={"https://www.instagram.com/usanceinterieurs/"}
+          button_text={"Volg Ons"}
           bg_muted={bg_muted}
           text_muted={text_muted}
         />
