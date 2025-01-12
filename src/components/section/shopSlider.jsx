@@ -34,9 +34,16 @@ const ShopSlider = ({ text_muted, bg_muted }) => {
 
   const ProductCard = ({ post }) => {
     return (
-      <div className="group">
+      <div className="group px-4 sm:px-0">
         <div className="relative">
-          <div className="absolute z-10 w-full h-full flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <div className="absolute z-10 w-full h-full flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <p
+              className={cn(
+                `text-sm text-white mb-4 px-4 text-center line-clamp-2 ${text_muted}`
+              )}
+            >
+              {post.caption}
+            </p>
             <a
               href={post.permalink}
               target="_blank"
@@ -57,18 +64,9 @@ const ShopSlider = ({ text_muted, bg_muted }) => {
               loading="lazy"
               placeholder="blur"
               blurDataURL={staticBluarDataUrl}
-              className="w-full h-full object-cover aspect-square"
+              className="w-full h-full object-cover aspect-square rounded-lg"
             />
           </div>
-        </div>
-        <div className="mt-[21px]">
-          <p
-            className={cn(
-              `text-sm text-primary-foreground line-clamp-2 ${text_muted}`
-            )}
-          >
-            {post.caption}
-          </p>
         </div>
       </div>
     );
