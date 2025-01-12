@@ -24,7 +24,7 @@ const Home3 = () => {
   return (
     <>
       <BannerThree />
-      <AboutOne />
+      {/* <AboutOne /> */}
       {/* <Counter /> */}
       {/* <Gallery /> */}
       {/* <ServicesSlider /> */}
