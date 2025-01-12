@@ -77,7 +77,7 @@ const Home4 = () => {
       />
       <ProjectsSlider text_muted={"text-muted"} bg_muted={"bg-muted"} />
       <Testimonial text_muted={"text-muted"} bg_muted={"bg-muted"} />
-      <ShopSlider
+      <InsagramSlider
         data={productData.slice(0, 5)}
         text_muted={"text-muted"}
         bg_muted={"bg-muted"}

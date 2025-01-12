@@ -69,7 +69,7 @@ const Home1 = () => {
       <VideoPortfolio />
       <ProjectsSlider />
       <Testimonial />
-      <ShopSlider data={productData.slice(0, 5)} />
+      <InsagramSlider data={productData.slice(0, 5)} />
 
       {/* -------- blog slider start */}
       <section className="pt-20">

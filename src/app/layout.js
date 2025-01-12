@@ -5,14 +5,14 @@ import LayoutChildren from "@/lib/layoutChildren";
 import ProgressCircle from "@/components/ui/scrollCircle";
 
 const plus_jakarta_sans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--plus-jakarta-sans',
-})
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--plus-jakarta-sans",
+});
 
 export const metadata = {
-  title: "Architronix",
-  description: "Architronix is a next js and tailwind css website",
+  title: "Usance Interieurs",
+  description: "Usance Interieurs - Interior Design Studio",
   icons: {
     icon: `${favicon.src}`,
   },
@@ -21,7 +21,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${plus_jakarta_sans.variable}`} suppressHydrationWarning={true}>
+      <body
+        className={`${plus_jakarta_sans.variable}`}
+        suppressHydrationWarning={true}
+      >
         <div id="page-wrapper" className="!relative ">
           {/* ------ body line start */}
           <div className="w-full h-full fixed -z-[1] top-0 left-0 right-0 mx-auto page-lines">
@@ -35,9 +38,7 @@ export default function RootLayout({ children }) {
           </div>
           {/* ------ body line end */}
           <ProgressCircle />
-          <LayoutChildren>
-            {children}
-          </LayoutChildren>
+          <LayoutChildren>{children}</LayoutChildren>
         </div>
       </body>
     </html>
