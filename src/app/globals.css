@@ -16,8 +16,8 @@ body {
 
 * {
   border-radius: 10px;
-  font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L",
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L",
+    "Helvetica Neue", Helvetica, Arial, sans-serif; */
 }
 
 @layer base {
@@ -70,19 +70,19 @@ body {
 
 @layer utilities {
   .stroke-dasharray-1000 {
-    stroke-dasharray: 1000;
+    stroke-dasharray: 3000;
   }
 
   .stroke-dashoffset-1000 {
-    stroke-dashoffset: 1000;
+    stroke-dashoffset: 3000;
   }
 
   .webkit-text-stroke-width-1 {
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 3px;
   }
 
   .webkit-text-stroke-width-2 {
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 3px;
   }
 
   .webkit-text-stroke-white {
