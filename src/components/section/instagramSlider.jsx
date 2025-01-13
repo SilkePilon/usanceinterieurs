@@ -18,7 +18,7 @@ const InsagramSlider = ({ text_muted, bg_muted }) => {
     const fetchPosts = async () => {
       try {
         const response = await fetch(
-          "https://feeds.behold.so/k5dAIDzSFOhl4csGlEuY"
+          "https://feeds.behold.so/c1H5vCQbkjAn3QYYNLNf"
         );
         const data = await response.json();
         setPosts(data.posts);
