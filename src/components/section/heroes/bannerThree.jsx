@@ -10,7 +10,7 @@ const BannerThree = () => {
       <div className="bg-hero-section bg-no-repeat h-screen bg-center bg-cover">
         <img
           className="absolute inset-0 object-cover h-screen w-full"
-          src="../test.jpg"
+          src="../test2.jpg"
         ></img>
         {/* <video
           autoPlay
