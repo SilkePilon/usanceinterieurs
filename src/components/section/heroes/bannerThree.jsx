@@ -8,14 +8,18 @@ const BannerThree = () => {
   return (
     <div className="relative overflow-x-hidden">
       <div className="bg-hero-section bg-no-repeat h-screen bg-center bg-cover">
-        <video
+        <img
+          className="absolute inset-0 object-cover h-screen w-full"
+          src="../test.jpg"
+        ></img>
+        {/* <video
           autoPlay
           loop
           muted
           className="absolute inset-0 object-cover h-screen w-full"
         >
           <source src="../video-3.mp4" type="video/mp4" />
-        </video>
+        </video> */}
         <div className="container">
           <div className="absolute top-1/2 -translate-y-1/2">
             <h1 className="text-white [font-size:_clamp(60px,10vw,150px)] font-extrabold leading-[90%]">
