@@ -1,10 +1,14 @@
+import Footer from "@/components/footer";
+import HeaderThree from "@/components/header/headerThree";
 
-import PreLoading from '@/components/ui/preLoading'
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <HeaderThree />
+      {children}
+      <Footer />
+    </div>
+  );
+};
 
-const Loading = () => {
-    return (
-        <PreLoading />
-    )
-}
-
-export default Loading
+export default Layout;

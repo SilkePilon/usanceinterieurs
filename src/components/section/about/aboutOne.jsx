@@ -49,7 +49,7 @@ const AboutOne = ({ text_muted, bg_muted }) => {
             `bg-primary xl:mt-[220px] lg:mt-25 md:mt-44 mt-[540px] xl:mb-20 mb-0 ${bg_muted}`
           )}
         >
-          <div className="container">
+          {/* <div className="container">
             <div className="flex lg:flex-row flex-col items-center gap-[66px]">
               <SectionSidebarImg
                 img={about_img}
@@ -89,7 +89,7 @@ const AboutOne = ({ text_muted, bg_muted }) => {
                 })}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

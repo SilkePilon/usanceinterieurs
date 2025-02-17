@@ -3,7 +3,8 @@ import "./globals.css";
 import favicon from "@/app/favicon.ico";
 import LayoutChildren from "@/lib/layoutChildren";
 import ProgressCircle from "@/components/ui/scrollCircle";
-
+import Footer from "@/components/footer";
+import HeaderThree from "@/components/header/headerThree";
 const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -38,7 +39,14 @@ export default function RootLayout({ children }) {
           </div>
           {/* ------ body line end */}
           <ProgressCircle />
-          <LayoutChildren>{children}</LayoutChildren>
+          <LayoutChildren>
+            {" "}
+            <div>
+              <HeaderThree />
+              {children}
+              <Footer />
+            </div>
+          </LayoutChildren>
         </div>
       </body>
     </html>

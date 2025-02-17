@@ -20,10 +20,10 @@ const ProjectCardOne = ({
   cardVariants,
 }) => {
   return (
-    <div className="xl:max-w-[95%] w-full mx-auto relative overflow-hidden ">
+    <div className="xl:max-w-[95%] w-full mx-auto relative overflow-hidden">
       <div className="container">
-        <div className="flex lg:flex-row flex-col items-center lg:pb-[170px] pb-25 ">
-          <div className={`${order} lg:w-1/2 `}>
+        <div className="flex lg:flex-row flex-col items-center lg:pb-[170px] pb-25">
+          <div className={`${order} lg:w-1/2`}>
             <div
               className={`${position} w-full xl:max-w-[1100px] max-w-[800px] max-h-[700px] h-full`}
             >
@@ -33,15 +33,13 @@ const ProjectCardOne = ({
                 variants={imageVariants}
                 viewport={{ once: true, amount: 0 }}
               >
-                <Image
+                <img
                   src={project_img}
                   loading="lazy"
-                  placeholder="blur"
-                  blurDataURL={staticBluarDataUrl}
-                  alt="project-img-1"
+                  alt={`Project image for ${project_name}`}
+                  className="h-full object-cover"
                   width={"auto"}
                   height={"auto"}
-                  className=" h-full"
                 />
               </motion.div>
             </div>
@@ -55,47 +53,52 @@ const ProjectCardOne = ({
           >
             <div
               style={{ backgroundColor: "#2A2B2D" }}
-              className={`xl:px-16 px-8 xl:pt-[78px] pt-10 xl:pb-[58px] pb-7  `}
+              className="xl:px-16 px-8 xl:pt-[78px] pt-10 xl:pb-[58px] pb-7"
             >
               <h3 className="xl:text-5xl md:text-[40px] text-4xl font-extrabold leading-120 text-secondary-foreground pb-10">
                 {project_name}
               </h3>
-              {/* <p className="text-secondary-foreground mb-7">{project_desc}</p> */}
+              {/* <div className="text-secondary-foreground mb-7">
+                <div dangerouslySetInnerHTML={{ __html: project_desc }} />
+              </div> */}
               {/* <ul className="mb-9">
-                <li className="flex  items-center mb-[6px]">
-                  <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
-                    Year:
-                  </span>
-                  <span className="font-medium text-secondary-foreground">
-                    {project_year}
-                  </span>
-                </li>
-                <li className="flex  items-center mb-[6px]">
-                  <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
-                    Category:
-                  </span>
-                  <span className="font-medium text-secondary-foreground">
-                    {project_type}
-                  </span>
-                </li>
-                <li className="flex  items-center mb-[6px]">
-                  <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
-                    Location
-                  </span>
-                  <span className="font-medium text-secondary-foreground">
-                    {location}
-                  </span>
-                </li>
+                {project_year && (
+                  <li className="flex items-center mb-[6px]">
+                    <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
+                      Year:
+                    </span>
+                    <span className="font-medium text-secondary-foreground">
+                      {project_year}
+                    </span>
+                  </li>
+                )}
+                {project_type && (
+                  <li className="flex items-center mb-[6px]">
+                    <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
+                      Category:
+                    </span>
+                    <span className="font-medium text-secondary-foreground">
+                      {project_type}
+                    </span>
+                  </li>
+                )}
+                {location && (
+                  <li className="flex items-center mb-[6px]">
+                    <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
+                      Location:
+                    </span>
+                    <span className="font-medium text-secondary-foreground">
+                      {location}
+                    </span>
+                  </li>
+                )}
               </ul> */}
               <Link href={link}>
-                <ButtonFill
-                  //   style={{ color: "#2A2B2D" }}
-                  className={
-                    "border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary"
-                  }
-                >
-                  View Project <RightArrow width={"35"} height={"22"} />
+                {/* <a href={link}> */}
+                <ButtonFill className="border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary">
+                  View Project <RightArrow width="35" height="22" />
                 </ButtonFill>
+                {/* </a> */}
               </Link>
             </div>
           </motion.div>

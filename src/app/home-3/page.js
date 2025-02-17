@@ -15,7 +15,7 @@ import { blogData } from "@/lib/fackData/blogData";
 import { productData } from "@/lib/fackData/productData";
 import { teamData } from "@/lib/fackData/teamData";
 import { cardSlideAnimation } from "@/lib/utils";
-
+import ProjectArchive from "@/app/(group1)/project-archive/page";
 export const metadata = {
   title: "Architronix -- Home-3",
   description: "Architronix is a next js and tailwind css website",
@@ -25,6 +25,7 @@ const Home3 = () => {
     <>
       <BannerThree />
       <AboutOne />
+
       {/* <Counter /> */}
       {/* <Gallery /> */}
       {/* <ServicesSlider /> */}
