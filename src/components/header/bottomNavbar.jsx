@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import { usePathname } from "next/navigation";
 import useActiveNavLink from "@/hooks/useActiveNavLink";
 import useStickyHeader from "@/hooks/useStickyHeader";
-
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
 const BottomNavbar = ({ linkColor }) => {
   const { products } = useSelector((state) => state.addToCart);
   const [offcanvaseActive, setOffcanvaseActive] = useState(false);
@@ -37,42 +37,47 @@ const BottomNavbar = ({ linkColor }) => {
         </div>
         <nav>
           <ul className="flex items-center">
-            {menuList.map(({ id, isDropdown, name, path, isMegaMenu }) => {
-              return (
-                <li key={id} className="group">
-                  <Link
-                    href={path}
-                    data-id={id}
-                    className={cn(
-                      `nav-link text-xl font-medium px-7 py-[34px] flex items-center gap-2  group-hover:bg-primary group-hover:text-secondary-foreground ${linkColor}`
-                    )}
-                  >
-                    {name}
-                    {(isDropdown || isMegaMenu) && (
-                      <span
-                        className={` transition-all duration-500 rotate-180 group-hover:rotate-0 group-hover:text-secondary-foreground`}
-                      >
-                        <svg
-                          width="12"
-                          height="9"
-                          viewBox="0 0 12 9"
-                          fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M11 8L6 2L1 8" />
-                        </svg>
-                      </span>
-                    )}
-                  </Link>
-                  {isDropdown.length && (
-                    <DropDownMenu dropDownList={isDropdown} parentId={id} />
-                  )}
-                  {isMegaMenu.length && (
-                    <MegaMenu dropDownList={isMegaMenu} parentId={id} />
-                  )}
-                </li>
-              );
-            })}
+            {/* Contact Information */}
+            <div className="flex items-center gap-6">
+              {/* Email */}
+              <div className="flex items-center gap-2">
+                <EnvelopeIcon className="h-6 w-6 text-primary-foreground" />
+                <a
+                  href="mailto:info@example.com"
+                  className={cn(`text-primary-foreground ${linkColor}`)}
+                  color="black"
+                  style={{ color: "black" }}
+                >
+                  info@usanceinterieurs.nl
+                </a>
+              </div>
+
+              {/* Phone Number 1 */}
+              <div className="flex items-center gap-2">
+                <PhoneIcon className="h-6 w-6 text-primary-foreground" />
+                <a
+                  href="tel:+1234567890"
+                  className={cn(`text-primary-foreground ${linkColor}`)}
+                  color="black"
+                  style={{ color: "black" }}
+                >
+                  06 30 30 57 60
+                </a>
+              </div>
+
+              {/* Phone Number 2 */}
+              <div className="flex items-center gap-2">
+                <PhoneIcon className="h-6 w-6 text-primary-foreground" />
+                <a
+                  href="tel:+0987654321"
+                  className={cn(`text-primary-foreground ${linkColor}`)}
+                  color="black"
+                  style={{ color: "black" }}
+                >
+                  06 30 30 57 60
+                </a>
+              </div>
+            </div>
             <li
               className={cn(
                 `other_icon text-primary-foreground px-6 cursor-pointer ${linkColor}`
