@@ -32,7 +32,7 @@ const BottomNavbar = ({ linkColor }) => {
             href="/"
             className={cn(`logo text-primary-foreground ${linkColor}`)}
           >
-            <Logo height={"31"} width={"219"} />
+            <Logo height={"90"} width={"219"} />
           </Link>
         </div>
         <nav>
