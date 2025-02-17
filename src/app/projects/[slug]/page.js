@@ -99,7 +99,7 @@ export default async function ProjectSinglePage({ params }) {
               <ul className="pb-7.5 pt-[75px] flex lg:flex-col flex-row flex-wrap lg:flex-nowrap gap-x-7 lg:gap-x-0 gap-y-[52px]">
                 <li>
                   <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Assignment:
+                    Opdracht:
                   </strong>
                   <span className="text-secondary-foreground block">
                     {project.metadata.opdracht}
@@ -107,7 +107,7 @@ export default async function ProjectSinglePage({ params }) {
                 </li>
                 <li>
                   <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Location:
+                    Locatie:
                   </strong>
                   <span className="text-secondary-foreground block">
                     {project.metadata.region?.value}
@@ -115,7 +115,7 @@ export default async function ProjectSinglePage({ params }) {
                 </li>
                 <li>
                   <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Project year:
+                    Project jaar:
                   </strong>
                   <span className="text-secondary-foreground block">
                     {project.metadata.uitvoering}
@@ -132,7 +132,7 @@ export default async function ProjectSinglePage({ params }) {
                 {project.metadata.collaborations && (
                   <li>
                     <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                      Collaborations:
+                      Samenwerking met:
                     </strong>
                     <span className="text-secondary-foreground block">
                       {project.metadata.collaborations}
@@ -155,7 +155,7 @@ export default async function ProjectSinglePage({ params }) {
         {referenceProjects.length > 0 && (
           <div className="container mt-32">
             <Title
-              title_text="Reference Projects"
+              title_text="Andere projecten"
               className="text-primary-foreground mb-16"
             />
             <RelatedProjects projects={referenceProjects} />
