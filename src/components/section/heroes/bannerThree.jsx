@@ -12,16 +12,10 @@ const BannerThree = () => {
           className="absolute inset-0 object-cover h-screen w-full"
           src={header.src}
         ></img>
-        {/* <video
-          autoPlay
-          loop
-          muted
-          className="absolute inset-0 object-cover h-screen w-full"
-        >
-          <source src="../video-3.mp4" type="video/mp4" />
-        </video> */}
+        {/* Gradient fade overlay */}
+        {/* <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent z-10"></div> */}
         <div className="container">
-          <div className="absolute top-1/2 -translate-y-1/2">
+          <div className="absolute top-1/2 -translate-y-1/2 z-20">
             <h1 className="text-white [font-size:_clamp(60px,10vw,150px)] font-extrabold leading-[90%]">
               Usance Interieurs <br />
               <TextTyped text={["Ontwerp", "Styling", "Realisatie"]} />

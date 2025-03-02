@@ -32,8 +32,13 @@ const ProjectArchive = () => {
           .props("slug,title,metadata")
           .depth(1);
 
+        // Filter projects by featured_on_homepage
+        const featuredProjects = response.objects.filter(
+          (project) => project.metadata?.featured_on_homepage
+        );
+
         // Group projects by category
-        const groupedProjects = response.objects.reduce((acc, project) => {
+        const groupedProjects = featuredProjects.reduce((acc, project) => {
           const category = project.metadata?.category?.value || "Uncategorized";
           if (!acc[category]) {
             acc[category] = [];
@@ -59,6 +64,22 @@ const ProjectArchive = () => {
           })
         );
 
+        // Desired order of categories
+        const desiredOrder = [
+          "Meubelshowroom concepts & styling",
+          "Retail interieurontwerp",
+          "Bedrijven interieurontwerp",
+          "Particulieren interieurontwerp",
+          "Woninginterieur renovatie",
+          "bouwbegeleiding",
+        ];
+
+        // Sort projects by desired order
+        categoryProjects.sort(
+          (a, b) =>
+            desiredOrder.indexOf(a.category) - desiredOrder.indexOf(b.category)
+        );
+
         setProjectsByCategory(categoryProjects);
         setLoading(false);
       } catch (err) {
@@ -76,13 +97,12 @@ const ProjectArchive = () => {
     return <div className="text-center py-10 text-red-500">Error: {error}</div>;
 
   return (
-    // <Link href={link} className="block">
     <section id="projects" className="relative w-full">
       <div className="container-fluid">
         <SectionTitle
-          sectionName={"Archive"}
-          sectionTitle={"A Journey Through Our Past Projects"}
-          sectionDesc={"Exploring the Tapestry of Our Design Legacy"}
+          sectionName={"Portfolio"}
+          sectionTitle={"Omdat wij u en ons vak verstaan"}
+          sectionDesc={"Laat je inspireren en informeren door onderstaande diensten die wij bieden en de projecten die wij reeds uit hebben mogen voeren."}
         />
       </div>
 
@@ -103,6 +123,7 @@ const ProjectArchive = () => {
                   project_year={project.project_year}
                   link={project.link}
                   project_name={project.project_name}
+                  category={category}
                   order={isEven ? "lg:order-1 order-0" : ""}
                   position={
                     isEven
@@ -124,7 +145,6 @@ const ProjectArchive = () => {
         </div>
       </div>
     </section>
-    // </Link>
   );
 };
 

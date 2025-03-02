@@ -15,6 +15,7 @@ const ProjectCardOne = ({
   location,
   project_type,
   project_name,
+  category,
   link,
   imageVariants,
   cardVariants,
@@ -55,8 +56,8 @@ const ProjectCardOne = ({
               style={{ backgroundColor: "#2A2B2D" }}
               className="xl:px-16 px-8 xl:pt-[78px] pt-10 xl:pb-[58px] pb-7"
             >
-              <h3 className="xl:text-5xl md:text-[40px] text-4xl font-extrabold leading-120 text-secondary-foreground pb-10">
-                {project_name}
+              <h3 className="xl:text-5xl md:text-[40px] text-4xl font-extrabold leading-120 text-secondary-foreground pb-10 uppercase">
+                {category}
               </h3>
               {/* <div className="text-secondary-foreground mb-7">
                 <div dangerouslySetInnerHTML={{ __html: project_desc }} />
@@ -96,7 +97,7 @@ const ProjectCardOne = ({
               <Link href={link}>
                 {/* <a href={link}> */}
                 <ButtonFill className="border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary">
-                  View Project <RightArrow width="35" height="22" />
+                  Bekijk Projecten <RightArrow width="35" height="22" />
                 </ButtonFill>
                 {/* </a> */}
               </Link>

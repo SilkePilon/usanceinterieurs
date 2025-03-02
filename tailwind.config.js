@@ -40,7 +40,7 @@ module.exports = {
       backgroundImage: {
         "overlay-liner": "linear-gradient(0deg, rgba(210, 224, 217, 0.55) 0%, rgba(210, 224, 217, 0.55) 100%)",
         "bottom-liner": "linear-gradient(180deg, rgba(0,0,0, .01) 14.06%, rgba(0,0,0, .7) 70.2%)",
-        "white-liner": "linear-gradient(180deg, rgba(217, 217, 217, 0.00) -21.43%, #FFF 153.57%)",
+        "white-liner": "linear-gradient(180deg, rgba(217, 217, 217, 0.00) 0%, #FFF 100%)", // Adjusted for smoother transition
         "underline-liner": "background-image: linear-gradient(180deg, transparent 65%, #fcf113 0)",
       },
       colors: {

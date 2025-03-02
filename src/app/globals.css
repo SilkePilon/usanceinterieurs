@@ -9,36 +9,29 @@ html {
 body {
   background-color: var(--background);
   font-family: var(--plus-jakarta-sans);
-  font-size: 18px;
-  line-height: 160%;
+  font-size: 16px; /* Reduced from 18px */
+  line-height: 140%; /* Reduced from 160% */
   font-weight: 400;
 }
 
 * {
   border-radius: 10px;
-  /* font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L",
-    "Helvetica Neue", Helvetica, Arial, sans-serif; */
 }
 
 @layer base {
   :root {
     --background: #f9fffc;
-
     --primary: #c64c33;
     --primary-foreground: #c64c33;
-
     --secondary: #d2e0d9;
     --secondary-foreground: #d2e0d9;
-
     --muted: #32393e;
-
+    --antraciet: #2A2B2D;
     --rgba-color: rgba(255, 255, 255, 0.2);
     --primary-rgba: rgb(108, 117, 125, 0.2);
     --secondary-rgba: rgb(210, 224, 217, 0.5);
     --overlay: rgba(0, 0, 0, 0.4);
-
     --border: rgba(37, 59, 47, 0.2);
-
     --radius: 8px;
   }
 
@@ -65,6 +58,10 @@ body {
 @layer base {
   * {
     @apply border-border;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--antraciet);
   }
 }
 
@@ -240,8 +237,8 @@ body {
 
 .container {
   width: 100%;
-  padding-right: calc(1.5rem * 0.5);
-  padding-left: calc(1.5rem * 0.5);
+  padding-right: calc(1rem * 0.5); /* Reduced from 1.5rem */
+  padding-left: calc(1rem * 0.5); /* Reduced from 1.5rem */
   margin-left: auto;
   margin-right: auto;
 }
@@ -288,8 +285,12 @@ body {
   }
 
   .container-fluid {
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 25px; /* Reduced from 30px */
+    padding-left: 25px; /* Reduced from 30px */
+  }
+
+  section {
+    margin-bottom: 3rem; /* Add default section spacing */
   }
 
   /* ------------ swiper js progress bar */
@@ -297,7 +298,7 @@ body {
     width: 90%;
   }
   .blog-single .project-slider-one .swiper-wrapper {
-    padding-left: 50px;
+    padding-left: 40px; /* Reduced from 50px */
   }
 }
 
@@ -316,4 +317,53 @@ body {
   .container {
     max-width: 1320px;
   }
+}
+.fade-top {
+  position: relative;
+}
+
+.fade-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px; /* Adjust the height as needed */
+  background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+  z-index: 1;
+}
+
+/* Add this to your global CSS file */
+.project-description p {
+  margin-bottom: 0.75rem; /* Adjust as needed */
+}
+
+.project-description h1, 
+.project-description h2, 
+.project-description h3, 
+.project-description h4, 
+.project-description h5, 
+.project-description h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-description ul, 
+.project-description ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.project-description li {
+  margin-bottom: 0.25rem;
+}
+
+/* Override any excessive spacing */
+.project-description > *:first-child {
+  margin-top: 0;
+}
+
+.project-description br + br {
+  display: none; /* Remove double line breaks */
 }

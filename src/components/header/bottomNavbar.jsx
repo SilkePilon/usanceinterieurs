@@ -61,7 +61,7 @@ const BottomNavbar = ({ linkColor }) => {
                   color="black"
                   style={{ color: "black" }}
                 >
-                  06 30 30 57 60
+                  Mariska 0630305760
                 </a>
               </div>
 
@@ -74,24 +74,11 @@ const BottomNavbar = ({ linkColor }) => {
                   color="black"
                   style={{ color: "black" }}
                 >
-                  06 30 30 57 60
+                  Dennis 0630211174
                 </a>
               </div>
             </div>
-            <li
-              className={cn(
-                `other_icon text-primary-foreground px-6 cursor-pointer ${linkColor}`
-              )}
-              onClick={() => setOffcanvaseActive(true)}
-            >
-              <Search height={"24"} width={"24"} />
-            </li>
-            <li
-              className={cn(
-                `other_icon text-primary-foreground pl-6 cursor-pointer flex relative ${linkColor}`
-              )}
-              onClick={() => setCartActive(true)}
-            ></li>
+            
           </ul>
         </nav>
       </div>

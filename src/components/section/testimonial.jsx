@@ -83,12 +83,13 @@ const Testimonial = ({ text_muted, bg_muted }) => {
                                 return (
                                     <SwiperSlide key={id}>
                                         <div className='flex md:gap-6 gap-2'>
-                                            <div className='text-secondary-foreground'><QuoteIcon /></div>
+                                            {/* TODO: blur this icon */}
+                                            <div className='text-secondary-foreground blur-xs'><QuoteIcon /></div>
                                             <div className='mt-16'>
                                                 <p className={cn(`text-lg text-primary-foreground ${text_muted}`)}>{review}</p>
                                                 <div className='relative after:absolute after:-left-5 after:top-0 after:w-[1px] after:h-full after:bg-primary ml-5 mt-6'>
-                                                    <h5 className={cn(`text-primary-foreground font-extrabold leading-160 text-lg ${text_muted}`)}>{name}</h5>
-                                                    <p className={cn(`text-primary-foreground font-medium ${text_muted}`)}>{position}</p>
+                                                    <h5 style={{color: "#2A2B2D"}} className={cn(`font-extrabold leading-160 text-lg ${text_muted}`)}>{name}</h5>
+                                                    <p style={{color: "#2A2B2D"}} className={cn(`font-medium ${text_muted}`)}>{position}</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -77,26 +77,26 @@ export default async function ProjectSinglePage({ params }) {
         >
           <div className="grid lg:grid-cols-[65%_auto] gap-[38px]">
             <div className="relative after:absolute sm:after:-left-12.5 after:-left-5 after:top-1/2 after:-translate-y-1/2 after:w-[1px] sm:after:h-[130%] after:h-[120%] after:bg-primary sm:ml-12.5 ml-5">
-              <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,100px)] font-extrabold leading-110">
+              <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
                 {project.title}
               </h1>
               <span className="inline-block w-[300px] h-[1px] bg-primary"></span>
               <div
-                className="text-2xl sm:text-3xl 2sm:text-4xl !leading-160 text-primary-foreground mt-[18px]"
+                className="text-2xl sm:text-3xl 2sm:text-4xl !leading-160 text-primary-foreground mt-[18px] project-description"
                 dangerouslySetInnerHTML={{
                   __html: project.metadata.description,
                 }}
               />
             </div>
 
-            <div className="bg-primary py-15 sm:px-[38px] px-5 lg:-mt-[410px]">
+            <div style={{background: "#2a2b2d"}} className="py-15 sm:px-[38px] px-5 lg:-mt-[410px]">
               <Title
                 title_text={
                   project.metadata.category?.value || "Project Details"
                 }
                 className={"text-secondary-foreground mb-0"}
               />
-              <ul className="pb-7.5 pt-[75px] flex lg:flex-col flex-row flex-wrap lg:flex-nowrap gap-x-7 lg:gap-x-0 gap-y-[52px]">
+              <ul className="pb-7.5 pt-[75px] flex lg:flex-col flex-row flex-wrap lg:flex-nowrap gap-x-3 lg:gap-x-0 gap-y-[20px]">
                 <li>
                   <strong className="text-secondary-foreground block text-2xl mb-1.5">
                     Opdracht:
@@ -135,7 +135,25 @@ export default async function ProjectSinglePage({ params }) {
                       Samenwerking met:
                     </strong>
                     <span className="text-secondary-foreground block">
-                      {project.metadata.collaborations}
+                      {project.metadata.collaborations.split(',').map((collaboration, index) => {
+                        const parts = collaboration.trim().split(' - ');
+                        if (parts.length !== 2) return collaboration.trim();
+                        
+                        const [name, url] = parts;
+                        return (
+                          <span key={index}>
+                            {index > 0 && ', '}
+                            <a 
+                              href={url.trim()} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="underline hover:text-primary"
+                            >
+                              {name.trim()}
+                            </a>
+                          </span>
+                        );
+                      })}
                     </span>
                   </li>
                 )}

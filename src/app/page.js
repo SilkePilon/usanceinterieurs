@@ -1,27 +1,18 @@
+import ProjectArchive from "@/app/(group1)/project-archive/page";
 import AboutOne from "@/components/section/about/aboutOne";
-import BlogSlider from "@/components/section/blogSlider";
 import Feedback from "@/components/section/feedback";
-import Gallery from "@/components/section/gallery";
 import BannerThree from "@/components/section/heroes/bannerThree";
-import ProjectsSlider from "@/components/section/projectsSlider";
-import ServicesSlider from "@/components/section/servicesSlider";
 import InsagramSlider from "@/components/section/instagramSlider";
 import Testimonial from "@/components/section/testimonial";
-import VideoPortfolio from "@/components/section/videoPortfolio";
 import TeamCardOne from "@/components/ui/cards/teamCardOne";
-import Counter from "@/components/ui/counter";
 import SectionTitle from "@/components/ui/sectionTitle";
-import { blogData } from "@/lib/fackData/blogData";
 import { productData } from "@/lib/fackData/productData";
 import { teamData } from "@/lib/fackData/teamData";
 import { cardSlideAnimation } from "@/lib/utils";
-import ProjectArchive from "@/app/(group1)/project-archive/page";
 export const metadata = {
   title: "Architronix -- Home-3",
   description: "Architronix is a next js and tailwind css website",
 };
-import ProductCard from "@/components/ui/cards/productCard";
-import Pagination from "@/components/ui/pagination";
 const Home3 = () => {
   return (
     <>

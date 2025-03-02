@@ -1,10 +1,10 @@
-import { Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
 import favicon from "@/app/favicon.ico";
-import LayoutChildren from "@/lib/layoutChildren";
-import ProgressCircle from "@/components/ui/scrollCircle";
 import Footer from "@/components/footer";
 import HeaderThree from "@/components/header/headerThree";
+import ProgressCircle from "@/components/ui/scrollCircle";
+import LayoutChildren from "@/lib/layoutChildren";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
 const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
