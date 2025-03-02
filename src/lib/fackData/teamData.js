@@ -17,7 +17,7 @@ export const teamData = [
     id: 1,
     img: team_1,
     name: "Mariska",
-    position: "Interior Alchemist",
+    position: "Interieur- en winkelvormgever",
     social_link: [
       {
         id: 1,
@@ -77,7 +77,7 @@ export const teamData = [
     id: 2,
     img: team_2,
     name: "Dennis",
-    position: "Chief Design Orchestrator",
+    position: "Interieurbouwer / Allround uitvoerder",
     social_link: [
       {
         id: 1,

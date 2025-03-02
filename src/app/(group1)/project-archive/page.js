@@ -101,7 +101,7 @@ const ProjectArchive = () => {
       <div className="container-fluid">
         <SectionTitle
           sectionName={"Portfolio"}
-          sectionTitle={"Omdat wij u en ons vak verstaan"}
+          sectionTitle={"Omdat wij u èn ons vak verstaan"}
           sectionDesc={"Laat je inspireren en informeren door onderstaande diensten die wij bieden en de projecten die wij reeds uit hebben mogen voeren."}
         />
       </div>

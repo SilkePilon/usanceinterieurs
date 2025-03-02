@@ -56,11 +56,11 @@ const Home3 = () => {
         <div className="container-fluid ">
           <SectionTitle
             sectionName={"Team"}
-            sectionTitle={"Architects of Architronix"}
+            sectionTitle={"Partners privé en voor Usance"}
             sectionDesc={
-              "Where Imagination Takes Flight, and Excellence Blossoms"
+              "."
             }
-            button_text={"Over Ons"}
+            button_text={"Meer Over Ons"}
             link={"/team"}
           />
         </div>
