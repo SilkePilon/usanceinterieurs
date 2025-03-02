@@ -97,38 +97,46 @@ export default async function ProjectSinglePage({ params }) {
                 className={"text-secondary-foreground mb-0"}
               />
               <ul className="pb-7.5 pt-[75px] flex lg:flex-col flex-row flex-wrap lg:flex-nowrap gap-x-3 lg:gap-x-0 gap-y-[20px]">
-                <li>
-                  <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Opdracht:
-                  </strong>
-                  <span className="text-secondary-foreground block">
-                    {project.metadata.opdracht}
-                  </span>
-                </li>
-                <li>
-                  <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Locatie:
-                  </strong>
-                  <span className="text-secondary-foreground block">
-                    {project.metadata.region}
-                  </span>
-                </li>
-                <li>
-                  <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Project jaar:
-                  </strong>
-                  <span className="text-secondary-foreground block">
-                    {project.metadata.uitvoering}
-                  </span>
-                </li>
-                <li>
-                  <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Type locatie:
-                  </strong>
-                  <span className="text-secondary-foreground block">
-                    {project.metadata.type_locatie}
-                  </span>
-                </li>
+                {project.metadata.opdracht && (
+                  <li>
+                    <strong className="text-secondary-foreground block text-2xl mb-1.5">
+                      Opdracht:
+                    </strong>
+                    <span className="text-secondary-foreground block">
+                      {project.metadata.opdracht}
+                    </span>
+                  </li>
+                )}
+                {project.metadata.location && (
+                  <li>
+                    <strong className="text-secondary-foreground block text-2xl mb-1.5">
+                      Locatie:
+                    </strong>
+                    <span className="text-secondary-foreground block">
+                      {project.metadata.location}
+                    </span>
+                  </li>
+                )}
+                {project.metadata.uitvoering && (
+                  <li>
+                    <strong className="text-secondary-foreground block text-2xl mb-1.5">
+                      Project jaar:
+                    </strong>
+                    <span className="text-secondary-foreground block">
+                      {project.metadata.uitvoering}
+                    </span>
+                  </li>
+                )}
+                {project.metadata.type_locatie && (
+                  <li>
+                    <strong className="text-secondary-foreground block text-2xl mb-1.5">
+                      Type locatie:
+                    </strong>
+                    <span className="text-secondary-foreground block">
+                      {project.metadata.type_locatie}
+                    </span>
+                  </li>
+                )}
                 {project.metadata.collaborations && (
                   <li>
                     <strong className="text-secondary-foreground block text-2xl mb-1.5">
@@ -156,18 +164,19 @@ export default async function ProjectSinglePage({ params }) {
                       })}
                     </span>
                   </li>
-
                 )}
-                <li>
-                  <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Klant Review:
-                  </strong>
-                  <span dangerouslySetInnerHTML={{
-                    __html: project.metadata.client_reference,
-                  }} 
-                  className="text-secondary-foreground block">
-                  </span>
-                </li>
+                {project.metadata.client_reference && (
+                  <li>
+                    <strong className="text-secondary-foreground block text-2xl mb-1.5">
+                      Klant Review:
+                    </strong>
+                    <span dangerouslySetInnerHTML={{
+                      __html: project.metadata.client_reference,
+                    }} 
+                    className="text-secondary-foreground block">
+                    </span>
+                  </li>
+                )}
               </ul>
               <ButtonOutline
                 className={

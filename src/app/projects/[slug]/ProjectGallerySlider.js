@@ -111,9 +111,10 @@ const ProjectGallerySlider = ({ images }) => {
         )}
       </div>
       
-      {/* Mobile version with slider - no thumbnails */}
+      {/* Mobile version with slider - 16:9 aspect ratio */}
       <div className="sm:hidden">
-        <div className="h-[450px]">
+        <div className="pt-16"></div>
+        <div className="w-full" style={{ aspectRatio: '16/9' }}>
           <Swiper
             slidesPerView={1}
             loop
@@ -129,12 +130,12 @@ const ProjectGallerySlider = ({ images }) => {
           >
             {images.map((image, index) => (
               <SwiperSlide key={index}>
-                <div className="relative w-full h-[450px]">
+                <div className="relative w-full h-full">
                   <Image
                     src={image.imgix_url}
                     alt={`Project image ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     priority={index === 0}
                     placeholder="blur"
                     blurDataURL={staticBluarDataUrl}
