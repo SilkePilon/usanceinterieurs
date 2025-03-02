@@ -105,7 +105,7 @@ const Home3 = () => {
       </section> */}
       {/* -------- blog slider end */}
 
-      <Feedback />
+      {/* <Feedback /> */}
     </>
   );
 };
