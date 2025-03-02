@@ -89,7 +89,7 @@ export default async function ProjectSinglePage({ params }) {
               />
             </div>
 
-            <div style={{background: "#2a2b2d"}} className="py-15 sm:px-[38px] px-5 lg:-mt-[410px]">
+            <div style={{ background: "#2a2b2d" }} className="py-15 sm:px-[38px] px-5 lg:-mt-[410px]">
               <Title
                 title_text={
                   project.metadata.category?.value || "Project Details"
@@ -110,7 +110,7 @@ export default async function ProjectSinglePage({ params }) {
                     Locatie:
                   </strong>
                   <span className="text-secondary-foreground block">
-                    {project.metadata.region?.value}
+                    {project.metadata.region}
                   </span>
                 </li>
                 <li>
@@ -123,7 +123,7 @@ export default async function ProjectSinglePage({ params }) {
                 </li>
                 <li>
                   <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    Project type:
+                    Type locatie:
                   </strong>
                   <span className="text-secondary-foreground block">
                     {project.metadata.type_locatie}
@@ -138,15 +138,15 @@ export default async function ProjectSinglePage({ params }) {
                       {project.metadata.collaborations.split(',').map((collaboration, index) => {
                         const parts = collaboration.trim().split(' - ');
                         if (parts.length !== 2) return collaboration.trim();
-                        
+
                         const [name, url] = parts;
                         return (
                           <span key={index}>
                             {index > 0 && ', '}
-                            <a 
-                              href={url.trim()} 
-                              target="_blank" 
-                              rel="noopener noreferrer" 
+                            <a
+                              href={url.trim()}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="underline hover:text-primary"
                             >
                               {name.trim()}
@@ -156,7 +156,18 @@ export default async function ProjectSinglePage({ params }) {
                       })}
                     </span>
                   </li>
+
                 )}
+                <li>
+                  <strong className="text-secondary-foreground block text-2xl mb-1.5">
+                    Klant Review:
+                  </strong>
+                  <span dangerouslySetInnerHTML={{
+                    __html: project.metadata.client_reference,
+                  }} 
+                  className="text-secondary-foreground block">
+                  </span>
+                </li>
               </ul>
               <ButtonOutline
                 className={
