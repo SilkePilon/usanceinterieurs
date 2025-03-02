@@ -51,7 +51,7 @@ const ProjectArchive = () => {
             project_type: project.metadata?.type_locatie || "",
             location: project.metadata?.region?.value || "",
             project_year: project.metadata?.uitvoering || "",
-            link: `/projects/${project.slug}`,
+            link: `/projecten/${project.slug}`,
           });
           return acc;
         }, {});
