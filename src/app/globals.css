@@ -10,7 +10,7 @@ body {
   background-color: var(--background);
   font-family: var(--plus-jakarta-sans);
   font-size: 16px; /* Reduced from 18px */
-  line-height: 140%; /* Reduced from 160% */
+  @-height: 140%; /* Reduced from 160% */
   font-weight: 400;
 }
 
@@ -26,7 +26,7 @@ body {
     --secondary: #d2e0d9;
     --secondary-foreground: #d2e0d9;
     --muted: #32393e;
-    --antraciet: #2A2B2D;
+    --antraciet: #2a2b2d;
     --rgba-color: rgba(255, 255, 255, 0.2);
     --primary-rgba: rgb(108, 117, 125, 0.2);
     --secondary-rgba: rgb(210, 224, 217, 0.5);
@@ -60,7 +60,12 @@ body {
     @apply border-border;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--antraciet);
   }
 }
@@ -338,17 +343,17 @@ body {
   margin-bottom: 0.75rem; /* Adjust as needed */
 }
 
-.project-description h1, 
-.project-description h2, 
-.project-description h3, 
-.project-description h4, 
-.project-description h5, 
+.project-description h1,
+.project-description h2,
+.project-description h3,
+.project-description h4,
+.project-description h5,
 .project-description h6 {
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
-.project-description ul, 
+.project-description ul,
 .project-description ol {
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;

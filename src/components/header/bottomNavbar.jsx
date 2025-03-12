@@ -43,7 +43,7 @@ const BottomNavbar = ({ linkColor }) => {
               <div className="flex items-center gap-2">
                 <EnvelopeIcon className="h-6 w-6 text-primary-foreground" />
                 <a
-                  href="mailto:info@example.com"
+                  href="mailto:info@usanceinterieurs.nl"
                   className={cn(`text-primary-foreground ${linkColor}`)}
                   color="black"
                   style={{ color: "black" }}
@@ -78,7 +78,6 @@ const BottomNavbar = ({ linkColor }) => {
                 </a>
               </div>
             </div>
-            
           </ul>
         </nav>
       </div>
