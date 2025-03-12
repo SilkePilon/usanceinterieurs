@@ -89,7 +89,10 @@ export default async function ProjectSinglePage({ params }) {
               />
             </div>
 
-            <div style={{ background: "#2a2b2d" }} className="py-15 sm:px-[38px] px-5 lg:-mt-[410px]">
+            <div
+              style={{ background: "#2a2b2d" }}
+              className="py-15 sm:px-[38px] px-5 lg:-mt-[410px]"
+            >
               <Title
                 title_text={
                   project.metadata.category?.value || "Project Details"
@@ -143,25 +146,27 @@ export default async function ProjectSinglePage({ params }) {
                       Samenwerking met:
                     </strong>
                     <span className="text-secondary-foreground block">
-                      {project.metadata.collaborations.split(',').map((collaboration, index) => {
-                        const parts = collaboration.trim().split(' - ');
-                        if (parts.length !== 2) return collaboration.trim();
+                      {project.metadata.collaborations
+                        .split(",")
+                        .map((collaboration, index) => {
+                          const parts = collaboration.trim().split(" - ");
+                          if (parts.length !== 2) return collaboration.trim();
 
-                        const [name, url] = parts;
-                        return (
-                          <span key={index}>
-                            {index > 0 && ', '}
-                            <a
-                              href={url.trim()}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="underline hover:text-primary"
-                            >
-                              {name.trim()}
-                            </a>
-                          </span>
-                        );
-                      })}
+                          const [name, url] = parts;
+                          return (
+                            <span key={index}>
+                              {index > 0 && ", "}
+                              <a
+                                href={url.trim()}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline hover:text-primary"
+                              >
+                                {name.trim()}
+                              </a>
+                            </span>
+                          );
+                        })}
                     </span>
                   </li>
                 )}
@@ -170,20 +175,22 @@ export default async function ProjectSinglePage({ params }) {
                     <strong className="text-secondary-foreground block text-2xl mb-1.5">
                       Klant Review:
                     </strong>
-                    <span dangerouslySetInnerHTML={{
-                      __html: project.metadata.client_reference,
-                    }} 
-                    className="text-secondary-foreground block">
-                    </span>
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: project.metadata.client_reference,
+                      }}
+                      className="text-secondary-foreground block"
+                    ></span>
                   </li>
                 )}
               </ul>
               <ButtonOutline
+                onClick={() => history.back()}
                 className={
                   "text-secondary-foreground border-secondary whitespace-nowrap hover:text-primary-foreground hover:bg-secondary"
                 }
               >
-                Neem contact op
+                Terug
               </ButtonOutline>
             </div>
           </div>
