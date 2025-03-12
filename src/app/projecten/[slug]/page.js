@@ -184,14 +184,15 @@ export default async function ProjectSinglePage({ params }) {
                   </li>
                 )}
               </ul>
-              <ButtonOutline
-                onClick={() => history.back()}
-                className={
-                  "text-secondary-foreground border-secondary whitespace-nowrap hover:text-primary-foreground hover:bg-secondary"
-                }
-              >
-                Terug
-              </ButtonOutline>
+              <div onClick={() => history.back()}>
+                <ButtonOutline
+                  className={
+                    "text-secondary-foreground border-secondary whitespace-nowrap hover:text-primary-foreground hover:bg-secondary"
+                  }
+                >
+                  Terug
+                </ButtonOutline>
+              </div>
             </div>
           </div>
         </div>
