@@ -6,7 +6,7 @@ import TeamTwo from "@/components/section/team/teamTwo";
 import Feedback from "@/components/section/feedback";
 import ProjectGallerySlider from "./ProjectGallerySlider";
 import RelatedProjects from "./RelatedProjects";
-
+import BackButton from "@/components/ui/buttons/BackButton";
 const cosmic = createBucketClient({
   bucketSlug: "usance-production",
   readKey: "I3jedjwVkj48hIM1WRP6qGKIy2atHx0knIxGxWIDSrr5J7ODZ2",
@@ -184,15 +184,10 @@ export default async function ProjectSinglePage({ params }) {
                   </li>
                 )}
               </ul>
-              <div onClick={() => history.back()}>
-                <ButtonOutline
-                  className={
-                    "text-secondary-foreground border-secondary whitespace-nowrap hover:text-primary-foreground hover:bg-secondary"
-                  }
-                >
-                  Terug
-                </ButtonOutline>
-              </div>
+
+              <BackButton className="text-secondary-foreground border-secondary whitespace-nowrap hover:text-primary-foreground hover:bg-secondary">
+                Terug
+              </BackButton>
             </div>
           </div>
         </div>
