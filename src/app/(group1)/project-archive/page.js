@@ -119,6 +119,7 @@ const ProjectArchive = () => {
                 className="relative lg:h-[600px] mb-16 lg:mb-0"
               >
                 <ProjectCardOne
+                  text_home={project.text_home}
                   project_desc={project.project_desc}
                   project_img={project.project_img}
                   project_type={project.project_type}
