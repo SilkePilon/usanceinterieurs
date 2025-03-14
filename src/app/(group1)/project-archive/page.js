@@ -66,17 +66,18 @@ const ProjectArchive = () => {
 
         // Desired order of categories
         const desiredOrder = [
-          "Meubelshowroom concepts & styling",
-          "Retail interieurontwerp",
-          "Bedrijven interieurontwerp",
-          "Particulieren interieurontwerp",
-          "Woninginterieur renovatie",
+          "Meubelshowroom Concepts & Styling",
+          "Retail Interieurontwerp",
+          "Bedrijven Interieurontwerp",
+          "Particulieren Interieurontwerp",
+          "Woninginterieur Renovatie",
           "bouwbegeleiding",
         ];
 
         // Sort projects by desired order
         categoryProjects.sort(
           (a, b) =>
+            console.log(a.category, b.category) ||
             desiredOrder.indexOf(a.category) - desiredOrder.indexOf(b.category)
         );
 
@@ -102,7 +103,9 @@ const ProjectArchive = () => {
         <SectionTitle
           sectionName={"Portfolio"}
           sectionTitle={"Omdat wij u èn ons vak verstaan"}
-          sectionDesc={"Laat je inspireren en informeren door onderstaande diensten die wij bieden en de projecten die wij reeds uit hebben mogen voeren."}
+          sectionDesc={
+            "Laat je inspireren en informeren door de 5 onderstaande diensten die wij bieden en de projecten die wij reeds uit hebben mogen voeren."
+          }
         />
       </div>
 
