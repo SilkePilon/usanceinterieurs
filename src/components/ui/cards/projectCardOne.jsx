@@ -60,9 +60,10 @@ const ProjectCardOne = ({
               <h3 className="xl:text-5xl md:text-[40px] text-4xl font-extrabold leading-120 text-secondary-foreground pb-10 uppercase">
                 {category}
               </h3>
-              <h4 className="xl:text-3xl md:text-2xl text-xl font-extrabold leading-120 text-primary-foreground pb-10">
-                {text_home}
-              </h4>
+              <h4
+                className="xl:text-3xl md:text-2xl text-xl font-extrabold leading-120 text-primary-foreground pb-10"
+                dangerouslySetInnerHTML={{ __html: text_home }}
+              ></h4>
               {/* <div className="text-secondary-foreground mb-7">
                 <div dangerouslySetInnerHTML={{ __html: project_desc }} />
               </div> */}
