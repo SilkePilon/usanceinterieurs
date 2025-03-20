@@ -22,7 +22,7 @@ const ProjectGallerySlider = ({ images }) => {
   };
   
   return (
-    <div className="relative">
+    <div className="relative pt-16 md:pt-20">
       {/* Desktop version with slider and thumbnails */}
       <div className="hidden sm:block">
         <div className="max-h-[80vh] min-h-[600px]">
@@ -123,7 +123,6 @@ const ProjectGallerySlider = ({ images }) => {
       
       {/* Mobile version with slider - 16:9 aspect ratio */}
       <div className="sm:hidden">
-        <div className="pt-16"></div>
         <div className="w-full" style={{ aspectRatio: '16/9' }}>
           <Swiper
             slidesPerView={1}
