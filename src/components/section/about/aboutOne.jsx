@@ -36,10 +36,10 @@ const AboutOne = ({ text_muted, bg_muted }) => {
     <section className="pt-20">
       <div className="container-fluid ">
         <SectionTitle
-          sectionName={"Over Ons"}
+          sectionName={"Eigen Stijl"}
           sectionTitle={"Wat betekent Usance eigenlijk?"}
           sectionDesc={
-            "De vrije vertaling voor usance is ‘gewoonte’. Ook wel ‘het nut beogend’. En dit is nou precies waar wij voor staan! Usance Interieurs denkt met u mee en zal altijd voor het interieur van uw woning, bedrijf, winkel of product het nut als uitgangspunt nemen. Een mooi interieurontwerp maken kunnen vele. Maar een op maat gemaakt advies waarin volledig op uw wensen en eisen wordt ingespeeld, tot en met de realisatie, dat doen wij uit gewoonte."
+            "De vrije vertaling voor usance is ‘gewoonte’. Ook wel ‘het nut beogend’. En dit is nou precies waar wij voor staan! Usance Interieurs denkt met u mee en zal altijd voor het interieur van uw woning, bedrijf, winkel of product het nut als uitgangspunt nemen. ,,Wij werken niet in eigen stijl maar op eigen wijze.” Een mooi interieurontwerp maken kunnen vele. Maar een op maat gemaakt advies waarin volledig op uw wensen en eisen wordt ingespeeld, tot en met de realisatie, dat doen wij uit gewoonte."
           }
         text_muted={text_muted}
         bg_muted={bg_muted}

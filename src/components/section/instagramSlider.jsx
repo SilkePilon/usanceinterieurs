@@ -77,8 +77,8 @@ const InsagramSlider = ({ text_muted, bg_muted }) => {
       <div className="container-fluid">
         <SectionTitle
           sectionName={"Instagram"}
-          sectionTitle={"Laatste Posts"}
-          sectionDesc={"Volg ons op Instagram voor meer inspiratie"}
+          sectionTitle={"Een beetje aandacht vragen mag toch?"}
+          sectionDesc={"Onze tijd besteden wij het liefst aan onze opdrachten, huis en gezin maar soms is het ook fijn om met jullie te delen waar wij zo trots mee bezig zijn."}
           link={"https://www.instagram.com/usanceinterieurs/"}
           button_text={"Volg Ons"}
           bg_muted={bg_muted}

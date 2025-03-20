@@ -56,9 +56,9 @@ const Home3 = () => {
         <div className="container-fluid ">
           <SectionTitle
             sectionName={"Team"}
-            sectionTitle={"Partners privé en voor Usance"}
+            sectionTitle={"Partners, privé en voor Usance"}
             sectionDesc={
-              "."
+              "Elkaar aanvullen voor optimaal resultaat geeft positieve spanning en energie."
             }
             button_text={"Meer Over Ons"}
             link={"/about-us"}
