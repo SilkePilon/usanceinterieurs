@@ -26,11 +26,11 @@ const Footer = () => {
                 <Logo height={"250"} width={"272"} />
               </Link>
               <h5 className="text-2xl font-semibold text-primary-foreground leading-160 pt-6 pb-3">
-                Shaping Interior Excellence
+                Vormgeving van Interieur Excellentie
               </h5>
               <div className="pt-4">
                 <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
-                  Address:
+                  Adres:
                 </h5>
                 <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
                 <p className="text-lg text-primary-foreground mt-2">
@@ -43,7 +43,7 @@ const Footer = () => {
             {/* Business Information */}
             <div className="flex flex-col justify-end">
               <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
-                Business Information:
+                Bedrijfsinformatie:
               </h5>
               <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2 mt-2">
@@ -70,7 +70,7 @@ const Footer = () => {
           
           <div className="py-4">
             <span className="text-sm text-primary-foreground block text-center lg:text-left">
-              ©{new Date().getFullYear()}, Usance Interieurs, All Rights Reserved
+              ©{new Date().getFullYear()}, Usance Interieurs, Alle Rechten Voorbehouden
             </span>
           </div>
         </div>
