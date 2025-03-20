@@ -55,7 +55,7 @@ const ProjectCardOne = ({
           >
             <div
               style={{ backgroundColor: "#2A2B2D" }}
-              className="xl:px-16 px-8 xl:pt-[78px] pt-10 xl:pb-[58px] pb-7"
+              className="xl:px-16 px-8 xl:pt-[100px] pt-10 xl:pb-[80px] pb-7"
             >
               <h3 className="text-3xl font-extrabold leading-120 text-secondary-foreground pb-4 uppercase">
                 {category}
