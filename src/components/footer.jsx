@@ -19,12 +19,16 @@ const Footer = () => {
           />
         </div>
         <div className="container relative z-10 text-white py-16">
+          {/* Centered Logo */}
+          <div className="flex justify-center mb-12">
+            <Link href={"/"} className="text-primary-foreground">
+              <Logo height={"350"} width={"380"} />
+            </Link>
+          </div>
+          
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-12">
-            {/* Company Logo and Address */}
+            {/* Address */}
             <div className="flex flex-col">
-              <Link href={"/"} className="text-primary-foreground">
-                <Logo height={"250"} width={"272"} />
-              </Link>
               <h5 className="text-2xl font-semibold text-primary-foreground leading-160 pt-6 pb-3">
                 Vormgeving van Interieur Excellentie
               </h5>
