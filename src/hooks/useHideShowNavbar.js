@@ -8,7 +8,6 @@ const useHideShowNavbar = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    let lastScrollTop = window.scrollY;
     const header = document.querySelector('header');
 
     if (!header) return;
@@ -23,18 +22,16 @@ const useHideShowNavbar = () => {
       const currentScrollTop = window.scrollY;
       
       if (header) {
-        // Show navbar when scrolling down
-        if (currentScrollTop > 100 && currentScrollTop > lastScrollTop) {
+        // Show navbar when scrolled down
+        if (currentScrollTop > 100) {
           header.style.transform = 'translateY(0)';
           header.style.transition = 'transform 0.3s ease-in-out';
         } 
-        // Hide navbar when scrolling up and near top
-        else if (currentScrollTop <= 100 || currentScrollTop < lastScrollTop) {
+        // Hide navbar only when at the top
+        else if (currentScrollTop < 100) {
           header.style.transform = 'translateY(-100%)';
         }
       }
-      
-      lastScrollTop = currentScrollTop;
     };
 
     // Use requestAnimationFrame for smooth performance
