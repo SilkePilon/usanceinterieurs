@@ -14,6 +14,13 @@ const ProjectGallerySlider = ({ images }) => {
   const mobileSwiperRef = useRef();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   
+  // Function to navigate to a specific slide when clicking on a thumbnail
+  const goToSlide = (index) => {
+    if (desktopSwiperRef.current) {
+      desktopSwiperRef.current.slideToLoop(index);
+    }
+  };
+  
   return (
     <div className="relative">
       {/* Desktop version with slider and thumbnails */}
@@ -67,7 +74,10 @@ const ProjectGallerySlider = ({ images }) => {
         </div>
 
         {images.length > 1 && (
-          <div className="container mt-8">
+          <div 
+            className="container lg:flex lg:flex-row lg:justify-start mt-8" 
+            style={{ position: "relative", zIndex: "20", maxWidth: "65%" }}
+          >
             <Swiper
               onSwiper={setThumbsSwiper}
               loop={true}
@@ -90,11 +100,11 @@ const ProjectGallerySlider = ({ images }) => {
               freeMode={true}
               watchSlidesProgress={true}
               modules={[FreeMode, Navigation, Thumbs]}
-              className="mt-[35px] relative z-20"
+              className="mt-[35px] relative thumbnail-swiper"
             >
               {images.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <div className="relative w-full h-[120px] cursor-pointer">
+                <SwiperSlide key={index} onClick={() => goToSlide(index)}>
+                  <div className="relative w-full h-[120px] cursor-pointer transition-all duration-300 hover:opacity-80 border-2 border-transparent hover:border-primary">
                     <Image
                       src={image.imgix_url}
                       alt={`Thumbnail ${index + 1}`}
