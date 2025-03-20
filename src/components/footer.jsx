@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Logo from "@/assets/icons/logo";
-import SocialMediaList from "./ui/socialMediaList";
 import Image from "next/image";
 import footer from "@/assets/images/footer.jpg";
 
@@ -19,90 +18,59 @@ const Footer = () => {
             priority
           />
         </div>
-        <div className="container relative z-10 text-white">
-          <div className="grid lg:grid-cols-3 grid-cols-1 items-center pt-[100px] pb-20">
-            <div>
-              <Link href={""} className="text-primary-foreground">
-                <Logo height={"200"} width={"218"} />
+        <div className="container relative z-10 text-white py-16">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-12">
+            {/* Company Logo and Address */}
+            <div className="flex flex-col">
+              <Link href={"/"} className="text-primary-foreground">
+                <Logo height={"250"} width={"272"} />
               </Link>
-              <h5 className="xl:text-2xl text-xl font-semibold text-primary-foreground leading-160 pt-2.5 pb-3">
+              <h5 className="text-2xl font-semibold text-primary-foreground leading-160 pt-6 pb-3">
                 Shaping Interior Excellence
               </h5>
-              {/* <SocialMediaList /> */}
-            </div>
-            <div className="mt-12 lg:mt-0 flex gap-x-10">
-              <span className="h-[198px] w-[1px] bg-primary block my-2.5"></span>
-              <div>
-                <h5 className="text-2xl font-extrabold block text-primary-foreground leading-160 ">
+              <div className="pt-4">
+                <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
                   Address:
                 </h5>
-                <span className="w-[99px] h-[1px] bg-primary block my-2.5"></span>
-                <div className="">
-                  <p className="text-xl font-bold text-primary-foreground">
-                    Architronix,{" "}
-                  </p>
-                  <p className="text-lg text-primary-foreground">
-                    Avda. Valencia, 3, 46891,{" "}
-                  </p>
-                  <p className="text-lg  text-primary-foreground">
-                    Palomar (Valencia), SPAIN{" "}
-                  </p>
-                </div>
-                <div className="mt-[17px]">
-                  <Link
-                    href={"tel:+34962398486"}
-                    className="text-lg block text-primary-foreground hover-underline"
-                  >
-                    Phone: <span>+34 96 239 84 86</span>
-                  </Link>
-                  <Link
-                    href={"mailto:hello@architronix.com"}
-                    className="text-lg block text-primary-foreground hover-underline"
-                  >
-                    Email: <span>hello@architronix.com</span>
-                  </Link>
-                </div>
+                <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
+                <p className="text-lg text-primary-foreground mt-2">
+                  Zuiderzeestraatweg west 12a,<br />
+                  8085 AE, Doornspijk
+                </p>
               </div>
             </div>
-            <div className="mt-12 lg:mt-0 flex gap-x-10">
-              <span className="h-[198px] w-[1px] bg-primary block my-2.5"></span>
-              <div>
-                <h5 className="text-2xl font-extrabold inline-block text-primary-foreground leading-160 ">
-                  Contact:
-                </h5>
-                <span className="w-[99px] h-[1px] bg-primary block my-2.5"></span>
-                <div className="mt-[18px]">
-                  <p className="text-xl font-bold text-primary-foreground">
-                    Architronix Inc,{" "}
-                  </p>
-                  <p className="text-lg text-primary-foreground">
-                    208 English Road, High Point,{" "}
-                  </p>
-                  <p className="text-lg  text-primary-foreground">
-                    NC 27262, USA{" "}
-                  </p>
-                </div>
-                <div className="mt-[17px]">
-                  <Link
-                    href={"tel:+34962398486"}
-                    className="text-lg block text-primary-foreground hover-underline"
-                  >
-                    Phone: <span>+336 885 6670</span>
-                  </Link>
-                  <Link
-                    href={"mailto:hello@architronix.com"}
-                    className="text-lg block text-primary-foreground hover-underline"
-                  >
-                    Email: <span>hello@architronix.com</span>
-                  </Link>
-                </div>
+
+            {/* Business Information */}
+            <div className="flex flex-col justify-end">
+              <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
+                Business Information:
+              </h5>
+              <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
+              <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2 mt-2">
+                <p className="text-base text-primary-foreground">
+                  <span className="font-semibold">BTW</span> NL 854432322 B01
+                </p>
+                <p className="text-base text-primary-foreground">
+                  <span className="font-semibold">KvK</span> 61654558
+                </p>
+                <p className="text-base text-primary-foreground">
+                  <span className="font-semibold">IBAN</span> NL48INGB0004595016
+                </p>
+                <p className="text-base text-primary-foreground">
+                  <span className="font-semibold">BIC</span> INGBNL2A
+                </p>
+                <p className="text-base text-primary-foreground sm:col-span-2">
+                  <span className="font-semibold">Bank</span> ING BANK NV
+                </p>
               </div>
             </div>
           </div>
-          <hr className="bg-pritext-primary-foreground" />
-          <div className="py-8 lg:flex justify-between items-center">
-            <span className="text-sm text-primary-foreground block">
-              ©2024, Usance Interieurs, All Rights Reserved
+          
+          <hr className="border-primary/30 my-6" />
+          
+          <div className="py-4">
+            <span className="text-sm text-primary-foreground block text-center lg:text-left">
+              ©{new Date().getFullYear()}, Usance Interieurs, All Rights Reserved
             </span>
           </div>
         </div>
