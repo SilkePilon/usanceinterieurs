@@ -88,9 +88,10 @@ export default async function AboutUsPage() {
 
         {/* Our Story Section */}
         <div className="mt-32">
-          <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
-            Ons Verhaal
-          </h1>
+          <Title
+            title_text="Ons Verhaal"
+            className="text-primary-foreground mb-12.5"
+          />
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <div className="relative">
@@ -103,21 +104,26 @@ export default async function AboutUsPage() {
                 />
               </div>
             </div>
-            <div>
-              <HtmlContent html={aboutUsData.metadata.ons_verhaal} />
+            <div className="text-primary-foreground">
+              <div className="text-lg !leading-160">
+                <HtmlContent html={aboutUsData.metadata.ons_verhaal} />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Our Process Section */}
         <div className="mt-32">
-          <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
-            Ons Proces
-          </h1>
+          <Title
+            title_text="Ons Proces"
+            className="text-primary-foreground mb-12.5"
+          />
           <div className="grid md:grid-cols-3 gap-8">
             {aboutUsData.metadata.ons_proces.map((process, index) => (
-              <div key={index} className="bg-secondary/10 p-8 rounded-md">
-                <HtmlContent html={process.ons_proces} />
+              <div key={index} className="bg-secondary/10 p-10 rounded-md hover:shadow-lg transition-shadow duration-300">
+                <div className="text-primary-foreground text-lg !leading-160">
+                  <HtmlContent html={process.ons_proces} />
+                </div>
               </div>
             ))}
           </div>
