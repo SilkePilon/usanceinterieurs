@@ -8,7 +8,7 @@ const RelatedProjects = ({ projects }) => {
     <div className="grid md:grid-cols-3 gap-8">
       {projects.map((project) => (
         <Link
-          href={`/projects/${project.slug}`}
+          href={`/projecten/${project.slug}`}
           key={project.slug}
           className="group transition-all duration-300 hover:-translate-y-2"
         >
