@@ -55,52 +55,17 @@ const ProjectCardOne = ({
           >
             <div
               style={{ backgroundColor: "#2A2B2D" }}
-              className="xl:px-16 px-8 xl:pt-[78px] pt-10 xl:pb-[58px] pb-7"
+              className="xl:px-16 px-8 xl:pt-[45px] pt-8 xl:pb-[40px] pb-6"
             >
-              <h3 className="text-3xl font-extrabold leading-120 text-secondary-foreground pb-10 uppercase">
+              <h3 className="text-3xl font-extrabold leading-120 text-secondary-foreground pb-4 uppercase">
                 {category}
               </h3>
               <h4
-                className="text-lg leading-120 text-secondary-foreground pb-10"
+                className="text-2xl leading-120 text-secondary-foreground pb-6"
                 dangerouslySetInnerHTML={{ __html: text_home }}
               ></h4>
-              {/* <div className="text-secondary-foreground mb-7">
-                <div dangerouslySetInnerHTML={{ __html: project_desc }} />
-              </div> */}
-              {/* <ul className="mb-9">
-                {project_year && (
-                  <li className="flex items-center mb-[6px]">
-                    <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
-                      Year:
-                    </span>
-                    <span className="font-medium text-secondary-foreground">
-                      {project_year}
-                    </span>
-                  </li>
-                )}
-                {project_type && (
-                  <li className="flex items-center mb-[6px]">
-                    <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
-                      Category:
-                    </span>
-                    <span className="font-medium text-secondary-foreground">
-                      {project_type}
-                    </span>
-                  </li>
-                )}
-                {location && (
-                  <li className="flex items-center mb-[6px]">
-                    <span className="inline-block font-extrabold min-w-32 text-secondary-foreground">
-                      Location:
-                    </span>
-                    <span className="font-medium text-secondary-foreground">
-                      {location}
-                    </span>
-                  </li>
-                )}
-              </ul> */}
               <Link href={link}>
-                <ButtonFill className="border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary text-xs py-1.5 px-3">
+                <ButtonFill className="pb-12 border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary text-xs py-1.5 px-3">
                   Bekijk Projecten <RightArrow width="20" height="12" />
                 </ButtonFill>
               </Link>
