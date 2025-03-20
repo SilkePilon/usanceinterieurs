@@ -66,14 +66,14 @@ export default async function ProjectSinglePage({ params }) {
 
   return (
     <section className="blog-single">
-      <div>
+      <div className="relative">
         {project.metadata.project_images?.length > 0 && (
           <ProjectGallerySlider images={project.metadata.project_images} />
         )}
 
         <div
-          style={{ zIndex: "1000000" }}
-          className="container 2sm:mt-[156px] sm:mt-30 mt-20"
+          className="container 2sm:mt-[156px] sm:mt-30 mt-20 relative"
+          style={{ zIndex: "10" }}
         >
           <div className="grid lg:grid-cols-[65%_auto] gap-[38px]">
             <div className="relative after:absolute sm:after:-left-12.5 after:-left-5 after:top-1/2 after:-translate-y-1/2 after:w-[1px] sm:after:h-[130%] after:h-[120%] after:bg-primary sm:ml-12.5 ml-5">
@@ -90,7 +90,7 @@ export default async function ProjectSinglePage({ params }) {
             </div>
 
             <div
-              style={{ background: "#2a2b2d" }}
+              style={{ background: "#2a2b2d", position: "relative", zIndex: "5" }}
               className="py-15 sm:px-[38px] px-5 lg:-mt-[410px]"
             >
               <Title

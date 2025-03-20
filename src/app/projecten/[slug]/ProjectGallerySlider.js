@@ -15,7 +15,7 @@ const ProjectGallerySlider = ({ images }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   
   return (
-    <div className="relative" style={{ zIndex: "-1000" }}>
+    <div className="relative">
       {/* Desktop version with slider and thumbnails */}
       <div className="hidden sm:block">
         <div className="max-h-[80vh] min-h-[600px]">
@@ -41,7 +41,7 @@ const ProjectGallerySlider = ({ images }) => {
                     src={image.imgix_url}
                     alt={`Project image ${index + 1}`}
                     fill
-                    style={{ zIndex: "-1000" }}
+                    style={{ zIndex: "1" }}
                     className="object-cover"
                     priority={index === 0}
                     placeholder="blur"
@@ -53,7 +53,7 @@ const ProjectGallerySlider = ({ images }) => {
           </Swiper>
         </div>
 
-        <div className="absolute top-1/2 -translate-y-1/2 z-10 w-full flex justify-between items-center gap-5 px-5">
+        <div className="absolute top-1/2 -translate-y-1/2 z-20 w-full flex justify-between items-center gap-5 px-5">
           <div onClick={() => desktopSwiperRef.current?.slidePrev()}>
             <ButtonFill className="rotate-180 2sm:h-[90px] h-10 2sm:w-[90px] w-10 2sm:px-6 px-1.5 after:bg-secondary border-secondary hover:border-primary text-primary-foreground hover:text-secondary-foreground hover:bg-primary">
               <RightArrow width="35" height="22" />
@@ -90,7 +90,7 @@ const ProjectGallerySlider = ({ images }) => {
               freeMode={true}
               watchSlidesProgress={true}
               modules={[FreeMode, Navigation, Thumbs]}
-              className="mt-[35px]"
+              className="mt-[35px] relative z-20"
             >
               {images.map((image, index) => (
                 <SwiperSlide key={index}>
@@ -146,7 +146,7 @@ const ProjectGallerySlider = ({ images }) => {
           </Swiper>
         </div>
 
-        <div className="absolute top-1/2 -translate-y-1/2 z-10 w-full flex justify-between items-center gap-5 px-3">
+        <div className="absolute top-1/2 -translate-y-1/2 z-20 w-full flex justify-between items-center gap-5 px-3">
           <div onClick={() => mobileSwiperRef.current?.slidePrev()}>
             <ButtonFill className="rotate-180 h-9 w-9 px-1 after:bg-secondary border-secondary text-primary-foreground">
               <RightArrow width="20" height="12" />
