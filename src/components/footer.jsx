@@ -1,12 +1,24 @@
 import Link from "next/link";
 import Logo from "@/assets/icons/logo";
 import SocialMediaList from "./ui/socialMediaList";
+import Image from "next/image";
+import footer from "@/assets/images/footer.jpg";
 
 const Footer = () => {
   return (
-    <footer className=" container-fluid  mx-auto ">
-      <div style={{ color: "white" }} className=" bg-[#2A2B2D] ">
-        <div className="container">
+    <footer className="container-fluid mx-auto relative">
+      <div className="relative">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={footer}
+            alt="Footer background"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            priority
+          />
+        </div>
+        <div className="container relative z-10 text-white">
           <div className="grid lg:grid-cols-3 grid-cols-1 items-center pt-[100px] pb-20">
             <div>
               <Link href={""} className="text-primary-foreground">
