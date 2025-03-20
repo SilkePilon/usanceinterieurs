@@ -100,11 +100,9 @@ const ProjectCardOne = ({
                 )}
               </ul> */}
               <Link href={link}>
-                {/* <a href={link}> */}
-                <ButtonFill className="border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary">
-                  Bekijk Projecten <RightArrow width="35" height="22" />
+                <ButtonFill className="border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary text-xs py-1.5 px-3">
+                  Bekijk Projecten <RightArrow width="20" height="12" />
                 </ButtonFill>
-                {/* </a> */}
               </Link>
             </div>
           </motion.div>
