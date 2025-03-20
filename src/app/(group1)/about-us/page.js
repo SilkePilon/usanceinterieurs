@@ -80,10 +80,10 @@ export default function AboutUsPage() {
 
         {/* Our Story Section */}
         <div className="mt-32">
-          <Title
-            title_text="Ons Verhaal"
-            className="text-primary-foreground mb-16"
-          />
+
+          <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
+            Ons Verhaal
+          </h1>
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <div className="relative">
@@ -112,10 +112,9 @@ export default function AboutUsPage() {
 
         {/* Our Process Section */}
         <div className="mt-32">
-          <Title
-            title_text="Ons Proces"
-            className="text-primary-foreground mb-16"
-          />
+          <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
+            Ons Proces
+          </h1>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-secondary/10 p-8 rounded-md">
               <h3 className="text-2xl font-bold mb-4 text-primary">1. Inspiratie & Concept</h3>
@@ -140,10 +139,9 @@ export default function AboutUsPage() {
 
         {/* Team Section */}
         <div className="mt-32">
-          <Title
-            title_text="Ons Team"
-            className="text-primary-foreground mb-16"
-          />
+          <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
+            Ons Team
+          </h1>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="team-member text-center">
               <div className="relative mb-6 overflow-hidden rounded-md">
@@ -177,25 +175,10 @@ export default function AboutUsPage() {
                 <ButtonOutline className="mt-4">Meer Info</ButtonOutline>
               </Link>
             </div>
-            <div className="team-member text-center">
-              <div className="relative mb-6 overflow-hidden rounded-md">
-                <Image
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070"
-                  alt="Projectmanager"
-                  width={350}
-                  height={400}
-                  className="w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-primary-foreground">Thomas Bakker</h3>
-              <p className="text-lg text-primary-foreground/80">Projectmanager</p>
-              <Link href="/team-single">
-                <ButtonOutline className="mt-4">Meer Info</ButtonOutline>
-              </Link>
-            </div>
+
           </div>
         </div>
-        
+
         {/* Project Showcase Section */}
         {/* <div className="mt-32">
           <Title
