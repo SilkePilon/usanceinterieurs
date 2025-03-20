@@ -147,9 +147,6 @@ export default async function AboutUsPage() {
               </div>
               <h3 className="text-2xl font-bold mb-2 text-primary-foreground">Dennis de Vries</h3>
               <p className="text-lg text-primary-foreground/80">Hoofdontwerper</p>
-              <Link href="/denis">
-                <ButtonOutline className="mt-4">Meer Info</ButtonOutline>
-              </Link>
             </div>
             <div className="team-member text-center">
               <div className="relative mb-6 overflow-hidden rounded-md">
@@ -163,9 +160,6 @@ export default async function AboutUsPage() {
               </div>
               <h3 className="text-2xl font-bold mb-2 text-primary-foreground">Mariska Janssen</h3>
               <p className="text-lg text-primary-foreground/80">Interieuradviseur</p>
-              <Link href="/mariska">
-                <ButtonOutline className="mt-4">Meer Info</ButtonOutline>
-              </Link>
             </div>
           </div>
         </div>
