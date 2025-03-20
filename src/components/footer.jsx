@@ -14,6 +14,7 @@ const Footer = () => {
             alt="Footer background"
             layout="fill"
             objectFit="cover"
+            objectPosition="top"
             quality={100}
             priority
           />
