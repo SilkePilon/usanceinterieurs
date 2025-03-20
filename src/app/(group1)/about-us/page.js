@@ -70,7 +70,7 @@ export default function AboutUsPage() {
               </li>
             </ul>
 
-            <Link href="/projecten">
+            <Link href="/#projects">
               <ButtonOutline className="text-secondary-foreground border-secondary whitespace-nowrap hover:text-primary-foreground hover:bg-secondary">
                 Bekijk Projecten
               </ButtonOutline>
