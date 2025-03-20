@@ -57,11 +57,11 @@ const ProjectCardOne = ({
               style={{ backgroundColor: "#2A2B2D" }}
               className="xl:px-16 px-8 xl:pt-[78px] pt-10 xl:pb-[58px] pb-7"
             >
-              <h3 className="xl:text-5xl md:text-[40px] text-4xl font-extrabold leading-120 text-secondary-foreground pb-10 uppercase">
+              <h3 className="text-3xl font-extrabold leading-120 text-secondary-foreground pb-10 uppercase">
                 {category}
               </h3>
               <h4
-                className="xl:text-3xl md:text-2xl text-xl font-extrabold leading-120 text-secondary-foreground pb-10"
+                className="text-2xl leading-120 text-secondary-foreground pb-10"
                 dangerouslySetInnerHTML={{ __html: text_home }}
               ></h4>
               {/* <div className="text-secondary-foreground mb-7">
