@@ -4,9 +4,9 @@ import HeaderFour from "@/components/header/headerFour";
 const Layout = ({ children }) => {
   return (
     <div>
-      <HeaderFour />
+      
       {children}
-      <Footer />
+      
     </div>
   );
 };

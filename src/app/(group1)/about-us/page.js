@@ -197,7 +197,7 @@ export default function AboutUsPage() {
         </div>
         
         {/* Project Showcase Section */}
-        <div className="mt-32">
+        {/* <div className="mt-32">
           <Title
             title_text="Project Galerij"
             className="text-primary-foreground mb-16"
@@ -258,7 +258,7 @@ export default function AboutUsPage() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Contact CTA Section */}
         <div className="mt-32 mb-20 bg-primary/10 p-16 rounded-lg text-center">
