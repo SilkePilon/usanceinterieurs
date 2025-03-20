@@ -55,17 +55,17 @@ const ProjectCardOne = ({
           >
             <div
               style={{ backgroundColor: "#2A2B2D" }}
-              className="xl:px-16 px-8 xl:pt-[45px] pt-8 xl:pb-[40px] pb-6"
+              className="xl:px-16 px-8 xl:pt-[78px] pt-10 xl:pb-[58px] pb-7"
             >
               <h3 className="text-3xl font-extrabold leading-120 text-secondary-foreground pb-4 uppercase">
                 {category}
               </h3>
               <h4
-                className="text-2xl leading-120 text-secondary-foreground pb-6"
+                className="text-lg leading-120 text-secondary-foreground pb-6"
                 dangerouslySetInnerHTML={{ __html: text_home }}
               ></h4>
               <Link href={link}>
-                <ButtonFill className="pb-12 border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary text-xs py-1.5 px-3">
+                <ButtonFill className="border-secondary text-[#2A2B2D] hover:text-secondary-foreground after:left-0 after:bg-secondary text-xs py-1.5 px-3">
                   Bekijk Projecten <RightArrow width="20" height="12" />
                 </ButtonFill>
               </Link>
