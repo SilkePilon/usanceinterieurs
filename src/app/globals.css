@@ -18,6 +18,12 @@ body {
   border-radius: 10px;
 }
 
+/* Header transition styles */
+header {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
 @layer base {
   :root {
     --background: #f9fffc;
@@ -29,29 +35,43 @@ body {
     --antraciet: #2a2b2d;
     --rgba-color: rgba(255, 255, 255, 0.2);
     --primary-rgba: rgb(108, 117, 125, 0.2);
-    --secondary-rgba: rgb(210, 224, 217, 0.5);
-    --overlay: rgba(0, 0, 0, 0.4);
-    --border: rgba(37, 59, 47, 0.2);
-    --radius: 8px;
+    --secondary-rgba: rgba(210, 224, 217, 0.3);
+    --border: #4b4b4b;
+    --overlay: rgba(210, 224, 217, 0.95);
+
+    --radius: 0.5rem;
+
+    --font-sans: "Plus Jakarta Sans", system-ui;
   }
 
   .dark {
-    --background: #06060e;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --primary: #253b2f;
-    --primary-foreground: #fff;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --secondary: #d2e0d9;
-    --secondary-foreground: #d2e0d9;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --rgba-color: rgba(255, 255, 255, 0.2);
-    --primary-rgba: rgb(108, 117, 125, 0.2);
-    --secondary-rgba: rgb(210, 224, 217, 0.5);
-    --overlay: rgba(0, 0, 0, 0.4);
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: #32393e;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --border: rgba(37, 59, 47, 0.2);
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
