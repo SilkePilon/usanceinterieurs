@@ -61,7 +61,7 @@ const Home3 = () => {
               "."
             }
             button_text={"Meer Over Ons"}
-            link={"/team"}
+            link={"/about-us"}
           />
         </div>
         <div className="container lg:pt-[340px] 2sm:pt-20 pt-14">
