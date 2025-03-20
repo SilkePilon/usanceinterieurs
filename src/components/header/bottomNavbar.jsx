@@ -1,51 +1,35 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import DropDownMenu from "./dropDownMenu";
-import MegaMenu from "./megaMenu";
 import Logo from "@/assets/icons/logo";
-import Search from "@/assets/icons/search";
-import { menuList } from "@/lib/fackData/menuList";
-import Offcanvas from "./offCanvas";
-import Cart from "./cart";
-import { cn, countCartProductQuantity } from "@/lib/utils";
-import ShopCart from "@/assets/icons/shopCart";
-import { useSelector } from "react-redux";
-import { usePathname } from "next/navigation";
-import useActiveNavLink from "@/hooks/useActiveNavLink";
-import useStickyHeader from "@/hooks/useStickyHeader";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
-const BottomNavbar = ({ linkColor }) => {
-  const { products } = useSelector((state) => state.addToCart);
-  const [offcanvaseActive, setOffcanvaseActive] = useState(false);
-  const [cartActive, setCartActive] = useState(false);
+import { cn } from "@/lib/utils";
+import Offcanvas from "./offCanvas";
 
-  useStickyHeader(linkColor);
-  const pathName = usePathname();
-  useActiveNavLink(pathName);
+const BottomNavbar = () => {
+  const [offcanvaseActive, setOffcanvaseActive] = useState(false);
 
   return (
     <>
-      <div className="bottom-navbar flex justify-between items-center">
+      <div className="bottom-navbar flex justify-between items-center py-2">
         <div>
           <Link
             href="/"
-            className={cn(`logo text-primary-foreground ${linkColor}`)}
+            className="logo text-primary-foreground"
           >
-            <Logo height={"110"} width={"220"} />
+            <Logo height={"80"} width={"160"} />
           </Link>
         </div>
         <nav>
           <ul className="flex items-center">
             {/* Contact Information */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4">
               {/* Email */}
               <div className="flex items-center gap-2">
-                <EnvelopeIcon className="h-6 w-6 text-primary-foreground" />
+                <EnvelopeIcon className="h-5 w-5 text-primary-foreground" />
                 <a
                   href="mailto:info@usanceinterieurs.nl"
-                  className={cn(`text-primary-foreground ${linkColor}`)}
-                  color="black"
+                  className="text-primary-foreground text-sm"
                   style={{ color: "black" }}
                 >
                   info@usanceinterieurs.nl
@@ -54,11 +38,10 @@ const BottomNavbar = ({ linkColor }) => {
 
               {/* Phone Number 1 */}
               <div className="flex items-center gap-2">
-                <PhoneIcon className="h-6 w-6 text-primary-foreground" />
+                <PhoneIcon className="h-5 w-5 text-primary-foreground" />
                 <a
                   href="tel:+1234567890"
-                  className={cn(`text-primary-foreground ${linkColor}`)}
-                  color="black"
+                  className="text-primary-foreground text-sm"
                   style={{ color: "black" }}
                 >
                   Mariska 0630305760
@@ -67,11 +50,10 @@ const BottomNavbar = ({ linkColor }) => {
 
               {/* Phone Number 2 */}
               <div className="flex items-center gap-2">
-                <PhoneIcon className="h-6 w-6 text-primary-foreground" />
+                <PhoneIcon className="h-5 w-5 text-primary-foreground" />
                 <a
                   href="tel:+0987654321"
-                  className={cn(`text-primary-foreground ${linkColor}`)}
-                  color="black"
+                  className="text-primary-foreground text-sm"
                   style={{ color: "black" }}
                 >
                   Dennis 0630211174
@@ -85,7 +67,6 @@ const BottomNavbar = ({ linkColor }) => {
         setOffcanvaseActive={setOffcanvaseActive}
         offcanvaseActive={offcanvaseActive}
       />
-      <Cart setCartActive={setCartActive} cartActive={cartActive} />
     </>
   );
 };

@@ -5,15 +5,15 @@ import MobileNavbar from './mobileNavbar'
 import useHideShowNavbar from '@/hooks/useHideShowNavbar'
 
 const HeaderThree = () => {
-    // Use our custom hook to handle navbar visibility
+    // Use hook to handle navbar visibility
     useHideShowNavbar();
 
     return (
-        <header className='absolute top-0 left-0 w-full z-50 overflow-x-clip'>
+        <header className='fixed top-0 left-0 w-full z-50 overflow-x-clip bg-background shadow-sm'>
             <div className='container-fluid'>
-                <div className='container border-white border-b'>
+                <div className='container'>
                     <div className='hidden xl:block'>
-                        <BottomNavbar linkColor="text-white" />
+                        <BottomNavbar />
                     </div>
                 </div>
             </div>

@@ -9,43 +9,28 @@ const useHideShowNavbar = () => {
     if (typeof window === 'undefined') return;
 
     let lastScrollTop = window.scrollY;
-    const isProjectPage = window.location.pathname.includes('/projecten/');
     const header = document.querySelector('header');
 
-    if (!header || !isProjectPage) return;
+    if (!header) return;
 
-    // Set initial state
+    // Set initial state - hidden at top
     if (window.scrollY < 100) {
       header.style.transform = 'translateY(-100%)';
       header.style.transition = 'transform 0.3s ease-in-out';
-      header.style.position = 'absolute';
-      header.style.backgroundColor = 'transparent';
     }
 
     const handleScroll = () => {
       const currentScrollTop = window.scrollY;
       
       if (header) {
-        // When scrolling down past threshold
-        if (currentScrollTop > 100) {
+        // Show navbar when scrolling down
+        if (currentScrollTop > 100 && currentScrollTop > lastScrollTop) {
           header.style.transform = 'translateY(0)';
-          header.style.position = 'fixed';
-          header.style.backgroundColor = 'var(--background)';
-          header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+          header.style.transition = 'transform 0.3s ease-in-out';
         } 
-        // When at top or near top
-        else if (currentScrollTop <= 50) {
-          // If we're scrolling up and near the top
-          if (currentScrollTop < lastScrollTop) {
-            header.style.transform = 'translateY(-100%)';
-            header.style.boxShadow = 'none';
-            
-            // When completely at top
-            if (currentScrollTop === 0) {
-              header.style.position = 'absolute';
-              header.style.backgroundColor = 'transparent';
-            }
-          }
+        // Hide navbar when scrolling up and near top
+        else if (currentScrollTop <= 100 || currentScrollTop < lastScrollTop) {
+          header.style.transform = 'translateY(-100%)';
         }
       }
       
