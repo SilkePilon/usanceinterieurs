@@ -61,7 +61,7 @@ const ProjectCardOne = ({
                 {category}
               </h3>
               <h4
-                className="text-2xl leading-120 text-secondary-foreground pb-10"
+                className="text-lg leading-120 text-secondary-foreground pb-10"
                 dangerouslySetInnerHTML={{ __html: text_home }}
               ></h4>
               {/* <div className="text-secondary-foreground mb-7">
