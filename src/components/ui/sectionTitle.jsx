@@ -50,7 +50,7 @@ const SectionTitle = ({
         <motion.div
           style={{ translateX: scrollValue, transitionDuration: "1s" }}
         >
-          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[324px]  lg:text-[200px] md:text-[170px] sm:text-[140px] text-[100px] whitespace-nowrap leading-135 ">
+          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[81px] lg:text-[50px] md:text-[42.5px] sm:text-[35px] text-[25px] whitespace-nowrap leading-135 ">
             {sectionName}
           </h1>
         </motion.div>
@@ -63,7 +63,7 @@ const SectionTitle = ({
         >
           <h2
             className={cn(
-              `[font-size:_clamp(48px,7vw,130px)] font-extrabold leading-110 mb-5 ${text_muted}`
+              `[font-size:_clamp(12px,1.75vw,32.5px)] font-extrabold leading-110 mb-5 ${text_muted}`
             )}
             style={{color: "#2A2B2D"}}
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
@@ -74,7 +74,7 @@ const SectionTitle = ({
           <div className="flex md:flex-row flex-col justify-between md:items-center">
             <h5
               className={cn(
-                `lg:text-[35px] sm:text-3xl text-xl font-semibold mt-4 max-w-[690px] md:mb-0 mb-7 !leading-160 ${text_muted}`
+                `lg:text-[8.75px] sm:text-[0.75rem] text-[0.5rem] font-semibold mt-4 max-w-[690px] md:mb-0 mb-7 !leading-160 ${text_muted}`
               )}
               style={{color: "#2A2B2D"}}
             >
@@ -84,10 +84,10 @@ const SectionTitle = ({
               <Link href={link}>
                 <ButtonOutline
                   className={cn(
-                    `2sm:px-10 px-3 after:left-0 after:${bg_muted}`
+                    `2sm:px-10 px-3 after:left-0 after:${bg_muted} text-xs`
                   )}
                 >
-                  {button_text} <RightArrow height={"22"} width={"35"} />{" "}
+                  {button_text} <RightArrow height={"16"} width={"25"} />{" "}
                 </ButtonOutline>
               </Link>
             )}
