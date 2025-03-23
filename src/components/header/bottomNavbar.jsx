@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Logo from "@/assets/icons/logo";
-import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { EnvelopeIcon, PhoneIcon, StarIcon } from "@heroicons/react/24/solid";
 import { cn } from "@/lib/utils";
 import Offcanvas from "./offCanvas";
 
@@ -11,13 +11,13 @@ const BottomNavbar = () => {
 
   return (
     <>
-      <div className="bottom-navbar flex justify-between items-center py-2">
-        <div>
+      <div className="bottom-navbar flex justify-between items-center py-2 h-[84px] rounded-bl-2xl rounded-br-2xl">
+        <div className="flex items-center h-full">
           <Link
             href="/"
             className="logo text-primary-foreground"
           >
-            <Logo height={"80"} width={"160"} />
+            <Logo height={"120"} width={"240"} />
           </Link>
         </div>
         <nav>
@@ -58,6 +58,18 @@ const BottomNavbar = () => {
                 >
                   Dennis 0630211174
                 </a>
+              </div>
+
+              {/* Reviews Link */}
+              <div className="flex items-center gap-2">
+                <StarIcon className="h-5 w-5 text-primary-foreground" />
+                <Link
+                  href="/#reviews"
+                  className="text-primary-foreground text-sm"
+                  style={{ color: "black" }}
+                >
+                  Reviews
+                </Link>
               </div>
             </div>
           </ul>

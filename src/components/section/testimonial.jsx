@@ -56,7 +56,7 @@ const Testimonial = ({ text_muted, bg_muted }) => {
     };
     
     return (
-        <section className='pt-20'>
+        <section id="reviews" className='pt-20'>
             <div className='container-fluid '>
                 <SectionTitle
                     sectionName={"Reviews"}
