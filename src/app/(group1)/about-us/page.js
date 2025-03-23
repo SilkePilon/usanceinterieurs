@@ -32,8 +32,8 @@ async function getAboutUsContent() {
     type: "about-us",
     slug: "over-ons"
   })
-  .props("slug,title,metadata,type")
-  .depth(1);
+    .props("slug,title,metadata,type")
+    .depth(1);
 
   return response.object;
 }
@@ -65,15 +65,21 @@ export default async function AboutUsPage() {
               title_text={aboutUsData.metadata.onze_expertise}
               className={"text-secondary-foreground mb-0"}
             />
-            <ul className="pb-7.5 pt-[75px] flex lg:flex-col flex-row flex-wrap lg:flex-nowrap gap-x-3 lg:gap-x-0 gap-y-[20px]">
+            <ul className="pb-7.5 pt-[75px] flex lg:flex-col flex-row flex-wrap lg:flex-nowrap gap-x-3 lg:gap-x-0 gap-y-[20px] text-secondary-foreground">
               {expertiseItems.map((item, index) => (
                 <li key={index}>
-                  <strong className="text-secondary-foreground block text-2xl mb-1.5">
-                    {item.title}
-                  </strong>
-                  <span className="text-secondary-foreground block">
-                    {item.content}
-                  </span>
+                  {item.title && (
+                    <strong 
+                      className="block text-2xl mb-1.5" 
+                      dangerouslySetInnerHTML={{ __html: item.title }}
+                    ></strong>
+                  )}
+                  {item.content && (
+                    <span 
+                      className="block" 
+                      dangerouslySetInnerHTML={{ __html: item.content }}
+                    ></span>
+                  )}
                 </li>
               ))}
             </ul>

@@ -22,78 +22,80 @@ const Footer = () => {
           />
         </div>
         <div className="container relative z-10 text-white py-16">
-          {/* Centered Logo */}
-          <div className="flex justify-center mb-12">
-            <Link href={"/"} className="text-primary-foreground">
-              <Logo height={"350"} width={"380"} />
-            </Link>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-12">
-            {/* Address */}
-            <div className="flex flex-col">
-              <h5 className="text-2xl font-semibold text-primary-foreground leading-160 pt-6 pb-3">
-                Vormgeving van Interieur Excellentie
-              </h5>
-              <div className="pt-4">
-                <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
-                  Adres:
-                </h5>
-                <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
-                <p className="text-lg text-primary-foreground mt-2">
-                  Zuiderzeestraatweg west 12a,<br />
-                  8085 AE, Doornspijk
-                </p>
+          <div className="grid lg:grid-cols-12 gap-x-10 gap-y-12">
+            {/* Logo on the left */}
+            <div className="lg:col-span-4 flex items-start">
+              <Link href={"/"} className="text-primary-foreground">
+                <Logo height={"350"} width={"380"} />
+              </Link>
+            </div>
+            
+            {/* Content on the right */}
+            <div className="lg:col-span-8">
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-12">
+                {/* Address */}
+                <div className="flex flex-col">
+                  <div className="pt-4">
+                    <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
+                      Adres:
+                    </h5>
+                    <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
+                    <p className="text-lg text-primary-foreground mt-2">
+                      Zuiderzeestraatweg west 12a,<br />
+                      8085 AE, Doornspijk
+                    </p>
+                  </div>
+                </div>
+
+                {/* Business Information */}
+                <div className="flex flex-col justify-start">
+                  <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
+                    Bedrijfsinformatie:
+                  </h5>
+                  <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
+                  <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2 mt-2">
+                    <p className="text-base text-primary-foreground">
+                      <span className="font-semibold">BTW</span> NL 854432322 B01
+                    </p>
+                    <p className="text-base text-primary-foreground">
+                      <span className="font-semibold">KvK</span> 61654558
+                    </p>
+                    <p className="text-base text-primary-foreground">
+                      <span className="font-semibold">IBAN</span> NL48INGB0004595016
+                    </p>
+                    <p className="text-base text-primary-foreground">
+                      <span className="font-semibold">BIC</span> INGBNL2A
+                    </p>
+                    <p className="text-base text-primary-foreground sm:col-span-2">
+                      <span className="font-semibold">Bank</span> ING BANK NV
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <hr className="border-primary/30 my-6" />
+              
+              {/* Social Links */}
+              <div className="flex justify-start gap-6 py-4">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.id}
+                    href={link.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-foreground hover:text-primary transition-colors"
+                  >
+                    {link.media}
+                  </a>
+                ))}
+              </div>
+
+              <div className="py-4">
+                <span className="text-sm text-primary-foreground block text-center lg:text-left">
+                  ©{new Date().getFullYear()}, Usance Interieurs, Alle Rechten Voorbehouden
+                </span>
               </div>
             </div>
-
-            {/* Business Information */}
-            <div className="flex flex-col justify-end">
-              <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
-                Bedrijfsinformatie:
-              </h5>
-              <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
-              <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2 mt-2">
-                <p className="text-base text-primary-foreground">
-                  <span className="font-semibold">BTW</span> NL 854432322 B01
-                </p>
-                <p className="text-base text-primary-foreground">
-                  <span className="font-semibold">KvK</span> 61654558
-                </p>
-                <p className="text-base text-primary-foreground">
-                  <span className="font-semibold">IBAN</span> NL48INGB0004595016
-                </p>
-                <p className="text-base text-primary-foreground">
-                  <span className="font-semibold">BIC</span> INGBNL2A
-                </p>
-                <p className="text-base text-primary-foreground sm:col-span-2">
-                  <span className="font-semibold">Bank</span> ING BANK NV
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <hr className="border-primary/30 my-6" />
-          
-          {/* Social Links */}
-          <div className="flex justify-center gap-6 py-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.id}
-                href={link.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-foreground hover:text-primary transition-colors"
-              >
-                {link.media}
-              </a>
-            ))}
-          </div>
-
-          <div className="py-4">
-            <span className="text-sm text-primary-foreground block text-center lg:text-left">
-              ©{new Date().getFullYear()}, Usance Interieurs, Alle Rechten Voorbehouden
-            </span>
           </div>
         </div>
       </div>
