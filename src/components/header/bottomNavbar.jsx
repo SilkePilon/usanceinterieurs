@@ -41,6 +41,21 @@ const BottomNavbar = () => {
     fetchCategories();
   }, []);
 
+  const handleMenuClick = (e, href) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    const targetId = href.replace('/#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <>
       <div className="bottom-navbar flex justify-between items-center py-2 h-[84px] rounded-bl-2xl rounded-br-2xl">
@@ -90,60 +105,74 @@ const BottomNavbar = () => {
               </div>
 
               {/* Menu Dropdown */}
-              <div className="relative">
+              <div className="flex items-center gap-2 group relative" style={{ zIndex: 9999 }}>
                 <button 
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="flex items-center gap-2 group cursor-pointer"
+                  className="flex items-center gap-2 cursor-pointer"
                 >
                   <Bars3Icon className="h-5 w-5 text-primary-foreground" />
                   <span className="text-primary-foreground text-sm">
                     Menu
                   </span>
                 </button>
-                
-                {isMenuOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-64 bg-background rounded-lg shadow-lg py-2 z-50">
-                    {/* Main navigation */}
-                    <div className="border-b border-primary-foreground/10 pb-2 mb-2">
-                      <Link 
-                        href="/#about" 
-                        className="block px-4 py-2 text-sm text-primary-foreground hover:bg-primary-foreground/10"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Over ons
-                      </Link>
-                      <Link 
-                        href="/#services" 
-                        className="block px-4 py-2 text-sm text-primary-foreground hover:bg-primary-foreground/10"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Onze diensten
-                      </Link>
-                    </div>
-
-                    {/* Project categories */}
-                    <div className="px-4 py-2">
-                      <span className="text-xs font-semibold text-primary-foreground/60 uppercase">
-                        Projecten
-                      </span>
-                    </div>
-                    {categories.map((category) => (
-                      <Link
-                        key={category}
-                        href={`/#${category.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block px-4 py-2 text-sm text-primary-foreground hover:bg-primary-foreground/10"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {category}
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
             </div>
           </ul>
         </nav>
       </div>
+      
+      {/* Render dropdown outside of nav structure */}
+      {isMenuOpen && (
+        <>
+          <div 
+            className="fixed inset-0 bg-black/20 z-[999]" 
+            onClick={() => setIsMenuOpen(false)}
+          />
+          <div 
+            className="fixed top-[84px] right-4 w-64 bg-background rounded-lg shadow-lg py-2 z-[1000]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Main navigation */}
+            <div className="border-b border-primary-foreground/10 pb-2 mb-2">
+              <button 
+                className="block w-full text-left px-4 py-2 text-sm text-primary-foreground hover:bg-primary-foreground/10"
+                onClick={(e) => {
+                  handleMenuClick(e, "/#about");
+                }}
+              >
+                Over ons
+              </button>
+              <button 
+                className="block w-full text-left px-4 py-2 text-sm text-primary-foreground hover:bg-primary-foreground/10"
+                onClick={(e) => {
+                  handleMenuClick(e, "/#services");
+                }}
+              >
+                Onze diensten
+              </button>
+            </div>
+
+            {/* Project categories */}
+            <div className="px-4 py-2">
+              <span className="text-xs font-semibold text-primary-foreground/60 uppercase">
+                Projecten
+              </span>
+            </div>
+            {categories.map((category) => (
+              <button
+                key={category}
+                className="block w-full text-left px-4 py-2 text-sm text-primary-foreground hover:bg-primary-foreground/10"
+                onClick={(e) => {
+                  handleMenuClick(e, `/#${category.toLowerCase().replace(/\s+/g, '-')}`);
+                }}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+      
       <Offcanvas
         setOffcanvaseActive={setOffcanvaseActive}
         offcanvaseActive={offcanvaseActive}

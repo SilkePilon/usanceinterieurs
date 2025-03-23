@@ -65,7 +65,7 @@ const SectionTitle = ({
             </div>
             <h2
               className={cn(
-                `relative z-10 [font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110 mb-5 ${text_muted}`
+                `relative z-10 [font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110 mb-5 ${text_muted} [&_.highlight-text]:text-primary [&_.highlight-text]:italic`
               )}
               style={{ color: "#2A2B2D" }}
               dangerouslySetInnerHTML={{ __html: sectionTitle }}
@@ -75,7 +75,7 @@ const SectionTitle = ({
           <div className="flex md:flex-row flex-col justify-between md:items-center">
             <h5
               className={cn(
-                `lg:text-lg sm:text-base text-sm font-semibold mt-4 max-w-[690px] md:mb-0 mb-7 !leading-160 ${text_muted}`
+                `lg:text-lg sm:text-base text-sm font-semibold mt-4 max-w-[690px] md:mb-0 mb-7 !leading-160 ${text_muted} [&_.highlight-text]:text-primary [&_.highlight-text]:italic`
               )}
               style={{ color: "#2A2B2D" }}
             >

@@ -9,7 +9,7 @@ const HeaderThree = () => {
     useHideShowNavbar();
 
     return (
-        <header className='fixed top-0 left-0 w-full z-50 overflow-x-clip bg-background shadow-sm'>
+        <header className='fixed top-0 left-0 w-full z-[100] overflow-x-clip bg-background shadow-sm'>
             <div className='container-fluid'>
                 <div className='container'>
                     <div className='hidden xl:block'>

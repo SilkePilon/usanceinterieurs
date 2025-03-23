@@ -41,6 +41,21 @@ const MobileNavbar = () => {
     fetchCategories();
   }, []);
 
+  const handleMenuClick = (e, href) => {
+    e.preventDefault();
+    setIsMenuActive(false);
+    
+    const targetId = href.replace('/#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="mobile-navbar">
       <div className="bg-background relative overflow-x-clip px-2.5">
@@ -118,7 +133,7 @@ const MobileNavbar = () => {
                 <li>
                   <Link
                     href="/#about"
-                    onClick={() => setIsMenuActive(false)}
+                    onClick={(e) => handleMenuClick(e, "/#about")}
                     className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
                   >
                     <span className="text-base">Over ons</span>
@@ -127,7 +142,7 @@ const MobileNavbar = () => {
                 <li>
                   <Link
                     href="/#services"
-                    onClick={() => setIsMenuActive(false)}
+                    onClick={(e) => handleMenuClick(e, "/#services")}
                     className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
                   >
                     <span className="text-base">Onze diensten</span>
@@ -144,7 +159,7 @@ const MobileNavbar = () => {
                   <li key={category}>
                     <Link
                       href={`/#${category.toLowerCase().replace(/\s+/g, '-')}`}
-                      onClick={() => setIsMenuActive(false)}
+                      onClick={(e) => handleMenuClick(e, `/#${category.toLowerCase().replace(/\s+/g, '-')}`)}
                       className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
                     >
                       <span className="text-base">{category}</span>
