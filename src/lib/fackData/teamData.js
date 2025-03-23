@@ -21,7 +21,12 @@ export const teamData = [
         id: 2,
         link: "https://www.instagram.com/usanceinterieurs/",
         media: "IN",
-      }
+      },
+      {
+        id: 3,
+        link: "https://www.linkedin.com/in/mariska-van-der-velde-003b4321/",
+        media: "LI",
+      },
     ],
   },
   {
@@ -39,7 +44,12 @@ export const teamData = [
         id: 2,
         link: "https://www.instagram.com/usanceinterieurs/",
         media: "IN",
-      }
+      },
+      {
+        id: 3,
+        link: "https://www.linkedin.com/in/mariska-van-der-velde-003b4321/",
+        media: "LI",
+      },
     ],
   },
 ];
