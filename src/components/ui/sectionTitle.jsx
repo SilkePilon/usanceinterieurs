@@ -78,8 +78,8 @@ const SectionTitle = ({
                 `lg:text-lg sm:text-base text-sm font-semibold mt-4 max-w-[690px] md:mb-0 mb-7 !leading-160 ${text_muted} [&_.highlight-text]:text-primary [&_.highlight-text]:italic`
               )}
               style={{ color: "#2A2B2D" }}
+              dangerouslySetInnerHTML={{ __html: sectionDesc }}
             >
-              {sectionDesc}
             </h5>
             {button_text && (
               <Link href={link}>
