@@ -45,48 +45,46 @@ const SectionTitle = ({
     });
   }, []);
   return (
-    <div className="relative">
-      <div ref={containerRef} className="absolute w-full overflow-hidden py-2">
-        <motion.div
-          style={{ translateX: scrollValue, transitionDuration: "1s" }}
-          className="w-full"
-        >
-          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[120px] lg:text-[100px] md:text-[80px] sm:text-[60px] text-[40px] whitespace-nowrap leading-135 z-0">
-            {sectionName}
-          </h1>
-        </motion.div>
-      </div>
-      <div className="container relative z-10">
+    <>
+      <div className="container relative">
         <div
           className={cn(
             `mt-4 xl:ml-12.5 lg:ml-9 md:ml-7 ml-3 after:contents-[""] after:absolute after:left-[12px] after:top-0 after:w-[1px] after:h-full after:bg-primary`
           )}
         >
-          <h2
-            className={cn(
-              `[font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110 mb-5 ${text_muted}`
-            )}
-            style={{color: "#2A2B2D"}}
-            dangerouslySetInnerHTML={{ __html: sectionTitle }}
-          />
-          <span
-            className={cn(`block w-[300px] h-[1px] bg-primary ${bg_muted}`)}
-          ></span>
+          <div className="relative">
+            <div ref={containerRef} className="absolute w-full overflow-hidden top-[5%]">
+              <motion.div
+                style={{ translateX: scrollValue, transitionDuration: "1s" }}
+                className="w-full"
+              >
+                <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[120px] lg:text-[100px] md:text-[80px] sm:text-[60px] text-[40px] whitespace-nowrap leading-135">
+                  {sectionName}
+                </h1>
+              </motion.div>
+            </div>
+            <h2
+              className={cn(
+                `relative z-10 [font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110 mb-5 ${text_muted}`
+              )}
+              style={{ color: "#2A2B2D" }}
+              dangerouslySetInnerHTML={{ __html: sectionTitle }}
+            />
+          </div>
+          <span className={cn(`block w-[300px] h-[1px] bg-primary ${bg_muted}`)}></span>
           <div className="flex md:flex-row flex-col justify-between md:items-center">
             <h5
               className={cn(
                 `lg:text-lg sm:text-base text-sm font-semibold mt-4 max-w-[690px] md:mb-0 mb-7 !leading-160 ${text_muted}`
               )}
-              style={{color: "#2A2B2D"}}
+              style={{ color: "#2A2B2D" }}
             >
               {sectionDesc}
             </h5>
             {button_text && (
               <Link href={link}>
                 <ButtonOutline
-                  className={cn(
-                    `2sm:px-10 px-3 after:left-0 after:${bg_muted}`
-                  )}
+                  className={cn(`2sm:px-10 px-3 after:left-0 after:${bg_muted}`)}
                 >
                   {button_text} <RightArrow height={"22"} width={"35"} />{" "}
                 </ButtonOutline>
@@ -95,7 +93,7 @@ const SectionTitle = ({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

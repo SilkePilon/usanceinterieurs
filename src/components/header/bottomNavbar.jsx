@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Logo from "@/assets/icons/logo";
-import { EnvelopeIcon, PhoneIcon, StarIcon } from "@heroicons/react/24/solid";
+import { EnvelopeIcon, PhoneIcon, Bars3Icon } from "@heroicons/react/24/solid";
 import { cn } from "@/lib/utils";
 import Offcanvas from "./offCanvas";
 
 const BottomNavbar = () => {
   const [offcanvaseActive, setOffcanvaseActive] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
@@ -60,16 +61,50 @@ const BottomNavbar = () => {
                 </a>
               </div>
 
-              {/* Reviews Link */}
-              <div className="flex items-center gap-2 group">
-                <StarIcon className="h-5 w-5 text-primary-foreground" />
-                <Link
-                  href="/#reviews"
-                  className="text-primary-foreground text-sm relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
-                  style={{ color: "black" }}
+              {/* Menu Dropdown */}
+              <div className="relative">
+                <button 
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="flex items-center gap-2 group cursor-pointer"
                 >
-                  Reviews
-                </Link>
+                  <Bars3Icon className="h-5 w-5 text-primary-foreground" />
+                  <span className="text-primary-foreground text-sm relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
+                    Menu
+                  </span>
+                </button>
+                
+                {isMenuOpen && (
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                    <Link 
+                      href="/#about" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Over ons
+                    </Link>
+                    <Link 
+                      href="/#services" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Diensten
+                    </Link>
+                    <Link 
+                      href="/#projects" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Projecten
+                    </Link>
+                    <Link 
+                      href="/#reviews" 
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Reviews
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </ul>

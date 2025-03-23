@@ -83,11 +83,37 @@ const MobileNavbar = () => {
                 </li>
                 <li>
                   <Link
+                    href="/#about"
+                    onClick={() => setIsMenuActive(false)}
+                    className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
+                  >
+                    <span className="text-base">Over ons</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#services"
+                    onClick={() => setIsMenuActive(false)}
+                    className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
+                  >
+                    <span className="text-base">Diensten</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#projects"
+                    onClick={() => setIsMenuActive(false)}
+                    className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
+                  >
+                    <span className="text-base">Projecten</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/#reviews"
                     onClick={() => setIsMenuActive(false)}
                     className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
                   >
-                    <StarIcon className="h-5 w-5" />
                     <span className="text-base">Reviews</span>
                   </Link>
                 </li>
