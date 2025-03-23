@@ -114,10 +114,13 @@ const ProjectArchive = () => {
         <div className="space-y-24 lg:space-y-32">
           {projectsByCategory.map(({ category, project }, index) => {
             const isEven = index % 2 === 0;
+            const categorySlug = category.toLowerCase().replace(/\s+/g, '-');
+            
             return (
               <div
                 key={project.id}
-                className="relative lg:h-[600px] mb-16 lg:mb-0"
+                id={categorySlug} // Add section ID that matches the category slug
+                className="relative lg:h-[600px] mb-16 lg:mb-0 scroll-mt-32" // Add scroll margin to account for fixed header
               >
                 <ProjectCardOne
                   text_home={project.text_home}
