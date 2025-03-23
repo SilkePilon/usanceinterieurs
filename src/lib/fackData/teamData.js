@@ -9,7 +9,7 @@ export const teamData = [
   {
     id: 1,
     img: team_1,
-    name: "Mariska Van Der Velden",
+    name: "Mariska van der Velde",
     position: "Interieur- en winkelvormgever",
     social_link: [
       {
@@ -32,7 +32,7 @@ export const teamData = [
   {
     id: 2,
     img: team_2,
-    name: "Dennis Van Den Dool",
+    name: "Dennis van den Dool",
     position: "Interieurbouwer / Allround uitvoerder",
     social_link: [
       {
