@@ -51,7 +51,7 @@ const SectionTitle = ({
           style={{ translateX: scrollValue, transitionDuration: "1s" }}
           className="w-full"
         >
-          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[84px] lg:text-[70px] md:text-[50px] sm:text-[30px] text-[24px] whitespace-nowrap leading-135 mb-[-2rem] z-50 relative">
+          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[120px] lg:text-[100px] md:text-[80px] sm:text-[60px] text-[40px] whitespace-nowrap leading-135 mb-[-2rem] z-50 relative">
             {sectionName}
           </h1>
         </motion.div>
@@ -75,7 +75,7 @@ const SectionTitle = ({
           <div className="flex md:flex-row flex-col justify-between md:items-center">
             <h5
               className={cn(
-                `lg:text-[35px] sm:text-3xl text-xl font-semibold mt-4 max-w-[690px] md:mb-0 mb-7 !leading-160 ${text_muted}`
+                `lg:text-lg sm:text-base text-sm font-semibold mt-4 max-w-[690px] md:mb-0 mb-7 !leading-160 ${text_muted}`
               )}
               style={{color: "#2A2B2D"}}
             >
