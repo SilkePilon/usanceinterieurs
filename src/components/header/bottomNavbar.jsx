@@ -25,11 +25,11 @@ const BottomNavbar = () => {
             {/* Contact Information */}
             <div className="flex items-center gap-4">
               {/* Email */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 group">
                 <EnvelopeIcon className="h-5 w-5 text-primary-foreground" />
                 <a
                   href="mailto:info@usanceinterieurs.nl"
-                  className="text-primary-foreground text-sm"
+                  className="text-primary-foreground text-sm relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
                   style={{ color: "black" }}
                 >
                   info@usanceinterieurs.nl
@@ -37,11 +37,11 @@ const BottomNavbar = () => {
               </div>
 
               {/* Phone Number 1 */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 group">
                 <PhoneIcon className="h-5 w-5 text-primary-foreground" />
                 <a
                   href="tel:+1234567890"
-                  className="text-primary-foreground text-sm"
+                  className="text-primary-foreground text-sm relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
                   style={{ color: "black" }}
                 >
                   Mariska 0630305760
@@ -49,11 +49,11 @@ const BottomNavbar = () => {
               </div>
 
               {/* Phone Number 2 */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 group">
                 <PhoneIcon className="h-5 w-5 text-primary-foreground" />
                 <a
                   href="tel:+0987654321"
-                  className="text-primary-foreground text-sm"
+                  className="text-primary-foreground text-sm relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
                   style={{ color: "black" }}
                 >
                   Dennis 0630211174
@@ -61,11 +61,11 @@ const BottomNavbar = () => {
               </div>
 
               {/* Reviews Link */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 group">
                 <StarIcon className="h-5 w-5 text-primary-foreground" />
                 <Link
                   href="/#reviews"
-                  className="text-primary-foreground text-sm"
+                  className="text-primary-foreground text-sm relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
                   style={{ color: "black" }}
                 >
                   Reviews
