@@ -45,18 +45,18 @@ const SectionTitle = ({
     });
   }, []);
   return (
-    <>
-      <div ref={containerRef} className="relative overflow-hidden py-2">
+    <div className="relative">
+      <div ref={containerRef} className="absolute w-full overflow-hidden py-2">
         <motion.div
           style={{ translateX: scrollValue, transitionDuration: "1s" }}
           className="w-full"
         >
-          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[120px] lg:text-[100px] md:text-[80px] sm:text-[60px] text-[40px] whitespace-nowrap leading-135 mb-[-2rem] z-50 relative">
+          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[120px] lg:text-[100px] md:text-[80px] sm:text-[60px] text-[40px] whitespace-nowrap leading-135 z-0">
             {sectionName}
           </h1>
         </motion.div>
       </div>
-      <div className="container relative">
+      <div className="container relative z-10">
         <div
           className={cn(
             `mt-4 xl:ml-12.5 lg:ml-9 md:ml-7 ml-3 after:contents-[""] after:absolute after:left-[12px] after:top-0 after:w-[1px] after:h-full after:bg-primary`
@@ -95,7 +95,7 @@ const SectionTitle = ({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
