@@ -3,7 +3,7 @@ import TextTyped from "../../ui/textTyped";
 import Link from "next/link";
 import ButtonFill from "@/components/ui/buttons/buttonFill";
 import RightArrow from "@/assets/icons/rightArrow";
-import header from "@/assets/images/header_2.jpg";
+import header from "@/assets/images/header.jpg";
 const BannerThree = () => {
   return (
     <div className="relative overflow-x-hidden">

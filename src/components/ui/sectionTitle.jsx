@@ -26,12 +26,12 @@ const SectionTitle = ({
 
   let scrollValue;
   if (scroll) {
-    scrollValue = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+    scrollValue = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
   } else {
     scrollValue = useTransform(
       scrollYProgress,
-      [0, 0],
-      ["0%", `${scrollHeight / 3}px`]
+      [0, 1],
+      ["0%", `${Math.min(scrollHeight / 4, 10)}%`]
     );
   }
   useEffect(() => {
@@ -46,11 +46,12 @@ const SectionTitle = ({
   }, []);
   return (
     <>
-      <div ref={containerRef} className="overflow-x-hidden">
+      <div ref={containerRef} className="relative overflow-hidden py-2">
         <motion.div
           style={{ translateX: scrollValue, transitionDuration: "1s" }}
+          className="w-full"
         >
-          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[324px]  lg:text-[200px] md:text-[170px] sm:text-[140px] text-[100px] whitespace-nowrap leading-135 ">
+          <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[84px] lg:text-[70px] md:text-[50px] sm:text-[30px] text-[24px] whitespace-nowrap leading-135 mb-[-2rem] z-50 relative">
             {sectionName}
           </h1>
         </motion.div>
@@ -58,12 +59,12 @@ const SectionTitle = ({
       <div className="container relative">
         <div
           className={cn(
-            `xl:-mt-52 -mt-16 xl:ml-12.5 lg:ml-9 md:ml-7 ml-3 after:contents-[""] after:absolute after:left-[12px] after:top-0 after:w-[1px] after:h-full after:bg-primary`
+            `mt-4 xl:ml-12.5 lg:ml-9 md:ml-7 ml-3 after:contents-[""] after:absolute after:left-[12px] after:top-0 after:w-[1px] after:h-full after:bg-primary`
           )}
         >
           <h2
             className={cn(
-              `[font-size:_clamp(48px,7vw,130px)] font-extrabold leading-110 mb-5 ${text_muted}`
+              `[font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110 mb-5 ${text_muted}`
             )}
             style={{color: "#2A2B2D"}}
             dangerouslySetInnerHTML={{ __html: sectionTitle }}
