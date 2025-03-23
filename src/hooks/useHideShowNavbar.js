@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 
 /**
- * Custom hook to hide navbar initially and when scrolled back to top on project pages,
- * show it when scrolling down as sticky navbar
+ * Custom hook to keep navbar always visible
  */
 const useHideShowNavbar = () => {
   useEffect(() => {
@@ -12,25 +11,14 @@ const useHideShowNavbar = () => {
 
     if (!header) return;
 
-    // Set initial state - hidden at top
-    if (window.scrollY < 100) {
-      header.style.transform = 'translateY(-100%)';
-      header.style.transition = 'transform 0.3s ease-in-out';
-    }
+    // Set initial state - always visible
+    header.style.transform = 'translateY(0)';
+    header.style.transition = 'transform 0.3s ease-in-out';
 
     const handleScroll = () => {
-      const currentScrollTop = window.scrollY;
-      
       if (header) {
-        // Show navbar when scrolled down
-        if (currentScrollTop > 100) {
-          header.style.transform = 'translateY(0)';
-          header.style.transition = 'transform 0.3s ease-in-out';
-        } 
-        // Hide navbar only when at the top
-        else if (currentScrollTop < 100) {
-          header.style.transform = 'translateY(-100%)';
-        }
+        // Always keep navbar visible
+        header.style.transform = 'translateY(0)';
       }
     };
 
