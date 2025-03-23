@@ -2,8 +2,11 @@ import Link from "next/link";
 import Logo from "@/assets/icons/logo";
 import Image from "next/image";
 import footer from "@/assets/images/footer.jpg";
+import { teamData } from "@/lib/fackData/teamData";
 
 const Footer = () => {
+  const socialLinks = teamData[0].social_link;
+
   return (
     <footer className="container-fluid mx-auto relative">
       <div className="relative">
@@ -72,6 +75,21 @@ const Footer = () => {
           
           <hr className="border-primary/30 my-6" />
           
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 py-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground hover:text-primary transition-colors"
+              >
+                {link.media}
+              </a>
+            ))}
+          </div>
+
           <div className="py-4">
             <span className="text-sm text-primary-foreground block text-center lg:text-left">
               ©{new Date().getFullYear()}, Usance Interieurs, Alle Rechten Voorbehouden

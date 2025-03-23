@@ -14,56 +14,14 @@ export const teamData = [
     social_link: [
       {
         id: 1,
-        link: "",
+        link: "https://www.facebook.com/UsanceInterieurs",
         media: "FB",
       },
       {
         id: 2,
-        link: "",
+        link: "https://www.instagram.com/usanceinterieurs/",
         media: "IN",
-      },
-      {
-        id: 3,
-        link: "",
-        media: "TW",
-      },
-      {
-        id: 4,
-        link: "TW",
-        media: "LI",
-      },
-    ],
-    portfolio: [
-      {
-        id: 1,
-        img: portfolio_1,
-        project_name: "MFA Lakeside Brielle",
-        link: "",
-      },
-      {
-        id: 2,
-        img: portfolio_2,
-        project_name: "Bovio House",
-        link: "",
-      },
-      {
-        id: 3,
-        img: portfolio_3,
-        project_name: "La Fuente Condo",
-        link: "",
-      },
-      {
-        id: 4,
-        img: portfolio_4,
-        project_name: "Pixel House",
-        link: "",
-      },
-      {
-        id: 5,
-        img: portfolio_5,
-        project_name: "La Fuente Condo",
-        link: "",
-      },
+      }
     ],
   },
   {
@@ -74,56 +32,14 @@ export const teamData = [
     social_link: [
       {
         id: 1,
-        link: "",
+        link: "https://www.facebook.com/UsanceInterieurs",
         media: "FB",
       },
       {
         id: 2,
-        link: "",
+        link: "https://www.instagram.com/usanceinterieurs/",
         media: "IN",
-      },
-      {
-        id: 3,
-        link: "",
-        media: "TW",
-      },
-      {
-        id: 4,
-        link: "TW",
-        media: "LI",
-      },
-    ],
-    portfolio: [
-      {
-        id: 1,
-        img: portfolio_1,
-        project_name: "MFA Lakeside Brielle",
-        link: "",
-      },
-      {
-        id: 2,
-        img: portfolio_2,
-        project_name: "Bovio House",
-        link: "",
-      },
-      {
-        id: 3,
-        img: portfolio_3,
-        project_name: "La Fuente Condo",
-        link: "",
-      },
-      {
-        id: 4,
-        img: portfolio_4,
-        project_name: "Pixel House",
-        link: "",
-      },
-      {
-        id: 5,
-        img: portfolio_5,
-        project_name: "La Fuente Condo",
-        link: "",
-      },
+      }
     ],
   },
 ];
