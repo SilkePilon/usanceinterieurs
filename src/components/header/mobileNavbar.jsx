@@ -36,66 +36,60 @@ const MobileNavbar = () => {
           <nav
             className={`max-h-screen min-h-screen overflow-y-auto bg-background absolute transition-all duration-500 ease-in-out transform ${
               isMenuActive ? "right-0" : "sm:-right-full -right-[150%]"
-            } top-0 z-50 py-4 px-4`}
+            } top-0 z-50 py-6 px-6`}
           >
             <div className="w-80">
-              <div className="flex items-center justify-between pb-4 mb-4">
-                <Link href={"/"} className="text-primary-foreground">
-                  <Logo height={"25"} width={"160"} />
+              {/* Header section with centered logo */}
+              <div className="flex flex-col items-center relative pb-6 mb-8 border-b border-primary-foreground/10">
+                <Link href={"/"} className="text-primary-foreground mb-2">
+                  <Logo height={"35"} width={"200"} />
                 </Link>
                 <div 
-                  className="text-primary-foreground cursor-pointer transform hover:rotate-180 transition-all duration-300" 
+                  className="absolute right-0 top-0 text-primary-foreground cursor-pointer transform hover:rotate-180 transition-all duration-300 p-2 rounded-full hover:bg-primary-foreground/10" 
                   onClick={() => setIsMenuActive(false)}
                 >
                   <CloseIcon />
                 </div>
               </div>
-              <ul className="space-y-6">
-                {/* Contact Items with slide-in animation */}
-                <li className="pb-4 transform transition-all duration-300 hover:translate-x-2">
-                  <div className="flex items-center gap-2">
-                    <EnvelopeIcon className="h-5 w-5 text-primary-foreground" />
-                    <a
-                      href="mailto:info@usanceinterieurs.nl"
-                      className="text-primary-foreground text-sm"
-                    >
-                      info@usanceinterieurs.nl
-                    </a>
-                  </div>
+
+              {/* Menu items with improved spacing */}
+              <ul className="space-y-8">
+                <li>
+                  <a
+                    href="mailto:info@usanceinterieurs.nl"
+                    className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
+                  >
+                    <EnvelopeIcon className="h-5 w-5" />
+                    <span className="text-base">info@usanceinterieurs.nl</span>
+                  </a>
                 </li>
-                <li className="pb-4 transform transition-all duration-300 hover:translate-x-2">
-                  <div className="flex items-center gap-2">
-                    <PhoneIcon className="h-5 w-5 text-primary-foreground" />
-                    <a
-                      href="tel:0630305760"
-                      className="text-primary-foreground text-sm"
-                    >
-                      Mariska 0630305760
-                    </a>
-                  </div>
+                <li>
+                  <a
+                    href="tel:0630305760"
+                    className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
+                  >
+                    <PhoneIcon className="h-5 w-5" />
+                    <span className="text-base">Mariska 0630305760</span>
+                  </a>
                 </li>
-                <li className="pb-4 transform transition-all duration-300 hover:translate-x-2">
-                  <div className="flex items-center gap-2">
-                    <PhoneIcon className="h-5 w-5 text-primary-foreground" />
-                    <a
-                      href="tel:0630211174"
-                      className="text-primary-foreground text-sm"
-                    >
-                      Dennis 0630211174
-                    </a>
-                  </div>
+                <li>
+                  <a
+                    href="tel:0630211174"
+                    className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
+                  >
+                    <PhoneIcon className="h-5 w-5" />
+                    <span className="text-base">Dennis 0630211174</span>
+                  </a>
                 </li>
-                <li className="pb-4 transform transition-all duration-300 hover:translate-x-2">
-                  <div className="flex items-center gap-2">
-                    <StarIcon className="h-5 w-5 text-primary-foreground" />
-                    <Link
-                      href="/#reviews"
-                      className="text-primary-foreground text-sm"
-                      onClick={() => setIsMenuActive(false)}
-                    >
-                      Reviews
-                    </Link>
-                  </div>
+                <li>
+                  <Link
+                    href="/#reviews"
+                    onClick={() => setIsMenuActive(false)}
+                    className="flex items-center gap-3 hover:bg-primary-foreground/5 p-3 rounded-lg text-primary-foreground transform transition-all duration-300 hover:translate-x-2 block w-full"
+                  >
+                    <StarIcon className="h-5 w-5" />
+                    <span className="text-base">Reviews</span>
+                  </Link>
                 </li>
               </ul>
             </div>
