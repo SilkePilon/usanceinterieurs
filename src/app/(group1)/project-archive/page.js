@@ -105,7 +105,7 @@ const ProjectArchive = () => {
           sectionName={"Portfolio"}
           sectionTitle={"Omdat wij u èn ons vak verstaan"}
           sectionDesc={
-            "De comfortabele kant van op avontuur gaan met ons, is met behoud van je eigen vertrouwde authenticiteit, je openstellen voor de verbeelding van fantasieën, om samen nieuwe mogelijkheden voor het interieur te ontdekken."
+            "De comfortabele kant van op avontuur gaan met ons, is met behoud van je eigen vertrouwde authenticiteit, je openstellen voor de verbeelding van fantasieën, om samen nieuwe mogelijkheden voor het interieur te ontdekken. Laat je inspireren en informeren door onderstaande diensten die wij bieden en de projecten die wij reeds uit hebben mogen voeren."
           }
         />
       </div>
