@@ -52,13 +52,13 @@ const SectionTitle = ({
             `mt-4 xl:ml-12.5 lg:ml-9 md:ml-7 ml-3 after:contents-[""] after:absolute after:left-[12px] after:top-0 after:w-[1px] after:h-full after:bg-primary`
           )}
         >
-          <div className="relative">
-            <div ref={containerRef} className="absolute w-full overflow-hidden top-[5%]">
+          <div className="relative pt-20">
+            <div ref={containerRef} className="absolute w-full overflow-visible inset-0 flex items-end">
               <motion.div
                 style={{ translateX: scrollValue, transitionDuration: "1s" }}
                 className="w-full"
               >
-                <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[120px] lg:text-[100px] md:text-[80px] sm:text-[60px] text-[40px] whitespace-nowrap leading-135">
+                <h1 className="font-serif text-transparent webkit-text-stroke-width-1 webkit-text-stroke-primary opacity-20 xl:text-[160px] lg:text-[130px] md:text-[100px] sm:text-[80px] text-[60px] whitespace-nowrap leading-none">
                   {sectionName}
                 </h1>
               </motion.div>
