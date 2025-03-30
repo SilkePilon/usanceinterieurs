@@ -99,8 +99,8 @@ const ProjectArchive = () => {
     return <div className="text-center py-10 text-red-500">Error: {error}</div>;
 
   return (
-    <section id="projects" className="relative w-full">
-      <div className="container-fluid">
+    <section className="relative w-full">
+      <div id="projects" className="container-fluid">
         <SectionTitle
           sectionName={"Portfolio"}
           sectionTitle={"Omdat wij u èn ons vak verstaan"}
