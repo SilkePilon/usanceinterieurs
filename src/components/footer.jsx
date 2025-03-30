@@ -9,20 +9,20 @@ const Footer = () => {
 
   return (
     <footer className="container-fluid mx-auto relative">
-      <div className="relative">
+      <div className="relative min-h-[800px]">
         <div className="absolute inset-0 z-0">
           <Image
             src={footer}
             alt="Footer background"
             layout="fill"
             objectFit="cover"
-            objectPosition="top"
+            objectPosition="bottom"
             quality={100}
             priority
           />
         </div>
-        <div className="container relative z-10 text-white py-16">
-          <div className="grid lg:grid-cols-12 gap-x-10 gap-y-12">
+        <div className="container relative z-10 text-white py-36">
+          <div className="grid lg:grid-cols-12 gap-x-10 gap-y-16">
             {/* Logo on the left */}
             <div className="lg:col-span-4 flex items-start">
               <Link href={"/"} className="text-primary-foreground">
@@ -32,15 +32,15 @@ const Footer = () => {
             
             {/* Content on the right */}
             <div className="lg:col-span-8">
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-12">
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-16">
                 {/* Address */}
                 <div className="flex flex-col">
                   <div className="pt-4">
                     <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
                       Adres:
                     </h5>
-                    <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
-                    <p className="text-lg text-primary-foreground mt-2">
+                    <span className="w-[80px] h-[1px] bg-primary block my-3"></span>
+                    <p className="text-lg text-primary-foreground mt-4">
                       Zuiderzeestraatweg west 12a,<br />
                       8085 AE, Doornspijk
                     </p>
@@ -52,8 +52,8 @@ const Footer = () => {
                   <h5 className="text-xl font-bold text-primary-foreground leading-relaxed">
                     Bedrijfsinformatie:
                   </h5>
-                  <span className="w-[80px] h-[1px] bg-primary block my-2"></span>
-                  <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-2 mt-2">
+                  <span className="w-[80px] h-[1px] bg-primary block my-3"></span>
+                  <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-3 mt-4">
                     <p className="text-base text-primary-foreground">
                       <span className="font-semibold">BTW</span> NL 854432322 B01
                     </p>
@@ -73,10 +73,10 @@ const Footer = () => {
                 </div>
               </div>
               
-              <hr className="border-primary/30 my-6" />
+              <hr className="border-primary/30 my-10" />
               
               {/* Social Links */}
-              <div className="flex justify-start gap-6 py-4">
+              <div className="flex justify-start gap-6 py-6">
                 {socialLinks.map((link) => (
                   <a
                     key={link.id}
@@ -90,7 +90,7 @@ const Footer = () => {
                 ))}
               </div>
 
-              <div className="py-4">
+              <div className="py-6">
                 <span className="text-sm text-primary-foreground block text-center lg:text-left">
                   ©{new Date().getFullYear()}, Usance Interieurs, Alle Rechten Voorbehouden
                 </span>

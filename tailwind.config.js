@@ -92,11 +92,14 @@ module.exports = {
             "fill": "currentColor",
             "fill-opacity": "0"
           },
-
           "100%": {
             "fill": "currentColor",
             "fill-opacity": "0"
           }
+        },
+        "fadeIn": {
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
         }
       },
       animation: {
@@ -104,6 +107,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "text-line-animation": "dash 4s linear forwards, filling 4s ease-in forwards",
+        "fadeIn": "fadeIn 0.5s ease-out forwards"
       },
     },
   },
