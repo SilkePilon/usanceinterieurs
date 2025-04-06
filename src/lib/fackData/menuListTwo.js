@@ -111,7 +111,7 @@ export const menuListTwo = [
             {
                 id: 1,
                 name: "About Us",
-                path: "/about-us"
+                path: "/over-ons"
             },
             {
                 id: 2,

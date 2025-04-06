@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from "swiper/modules"
 import 'swiper/css';
 import { createBucketClient } from '@cosmicjs/sdk';
-
+import Link from 'next/link';
 import QuoteIcon from '@/assets/icons/quoteIcon';
 import SectionTitle from '../ui/sectionTitle'
 import ProgressAndNatigation from '../ui/progressAndNatigation';
@@ -35,7 +35,7 @@ const Testimonial = ({ text_muted, bg_muted }) => {
                         name: item.title,
                         position: item.metadata.persoon,
                         review: item.metadata.uitspraak,
-                        project: item.metadata.bijbehorend_project?.title || ""
+                        project: item.metadata.bijbehorend_project
                     }));
                     setTestimonials(formattedTestimonials);
                 }
@@ -92,16 +92,18 @@ const Testimonial = ({ text_muted, bg_muted }) => {
                                 testimonials.map(({ id, name, position, review, project }) => {
                                     return (
                                         <SwiperSlide key={id}>
-                                            <div className='flex md:gap-6 gap-2'>
-                                                <div className='text-secondary-foreground blur-xs'><QuoteIcon /></div>
-                                                <div className='mt-16'>
-                                                    <p className={cn(`text-lg text-primary-foreground ${text_muted}`)}>{review}</p>
-                                                    <div className='relative after:absolute after:-left-5 after:top-0 after:w-[1px] after:h-full after:bg-primary ml-5 mt-6'>
-                                                        <h5 style={{color: "#2A2B2D"}} className={cn(`font-extrabold leading-160 text-lg ${text_muted}`)}>{position}</h5>
-                                                        <p style={{color: "#2A2B2D"}} className={cn(`font-medium ${text_muted}`)}>{project}</p>
+                                            <Link href={project ? `/projecten/${project.slug}` : '#'}>
+                                                <div className='flex md:gap-6 gap-2'>
+                                                    <div className='text-secondary-foreground blur-xs'><QuoteIcon /></div>
+                                                    <div className='mt-16'>
+                                                        <p className={cn(`text-lg text-primary-foreground ${text_muted}`)}>{review}</p>
+                                                        <div className='relative after:absolute after:-left-5 after:top-0 after:w-[1px] after:h-full after:bg-primary ml-5 mt-6'>
+                                                            <h5 style={{color: "#2A2B2D"}} className={cn(`font-extrabold leading-160 text-lg ${text_muted}`)}>{position}</h5>
+                                                            <p style={{color: "#2A2B2D"}} className={cn(`font-medium ${text_muted}`)}>{project?.title || ""}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         </SwiperSlide>
                                     )
                                 })

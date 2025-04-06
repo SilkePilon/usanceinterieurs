@@ -6,11 +6,13 @@ import { createBucketClient } from '@cosmicjs/sdk';
 
 // Custom component to render HTML content safely
 const HtmlContent = ({ html }) => {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  return html ? <div dangerouslySetInnerHTML={{ __html: html }} /> : null;
 };
 
 // Parse HTML content from expertise list
 const parseExpertiseList = (htmlContent) => {
+  if (!htmlContent) return [];
+  
   // Simple regex to extract list items
   const items = htmlContent.match(/<li>(.*?)<\/li>/gs) || [];
   return items.map((item) => {
@@ -23,24 +25,38 @@ const parseExpertiseList = (htmlContent) => {
 };
 
 async function getAboutUsContent() {
-  const cosmic = createBucketClient({
-    bucketSlug: 'usance-production',
-    readKey: 'I3jedjwVkj48hIM1WRP6qGKIy2atHx0knIxGxWIDSrr5J7ODZ2'
-  });
+  try {
+    const cosmic = createBucketClient({
+      bucketSlug: 'usance-production',
+      readKey: 'I3jedjwVkj48hIM1WRP6qGKIy2atHx0knIxGxWIDSrr5J7ODZ2'
+    });
 
-  const response = await cosmic.objects.findOne({
-    type: "about-us",
-    slug: "over-ons"
-  })
-    .props("slug,title,metadata,type")
-    .depth(1);
+    const response = await cosmic.objects.findOne({
+      type: "about-us",
+      slug: "over-ons"
+    })
+      .props("slug,title,metadata,type")
+      .depth(1);
 
-  return response.object;
+    return response?.object || null;
+  } catch (error) {
+    console.error('Error fetching about us content:', error);
+    return null;
+  }
 }
 
 export default async function AboutUsPage() {
   const aboutUsData = await getAboutUsContent();
-  const expertiseItems = parseExpertiseList(aboutUsData.metadata.onze_expertise_tekst);
+  
+  // Default values if data is missing
+  const pageTitle = aboutUsData?.title || 'Over Ons';
+  const overOnsText = aboutUsData?.metadata?.over_ons || '';
+  const onzeExpertise = aboutUsData?.metadata?.onze_expertise || 'Onze Expertise';
+  const onzeExpertiseTekst = aboutUsData?.metadata?.onze_expertise_tekst || '';
+  const onsVerhaalText = aboutUsData?.metadata?.ons_verhaal || '';
+  const onsProces = aboutUsData?.metadata?.ons_proces || [];
+  
+  const expertiseItems = parseExpertiseList(onzeExpertiseTekst);
 
   return (
     <section className="about-us">
@@ -49,11 +65,11 @@ export default async function AboutUsPage() {
         <div className="grid lg:grid-cols-[65%_auto] gap-[38px]">
           <div className="relative after:absolute sm:after:-left-12.5 after:-left-5 after:top-1/2 after:-translate-y-1/2 after:w-[1px] sm:after:h-[130%] after:h-[120%] after:bg-primary sm:ml-12.5 ml-5">
             <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
-              {aboutUsData.title}
+              {pageTitle}
             </h1>
             <span className="inline-block w-[300px] h-[1px] bg-primary"></span>
             <div className="text-2xl sm:text-3xl 2sm:text-4xl !leading-160 text-primary-foreground mt-[18px]">
-              <HtmlContent html={aboutUsData.metadata.over_ons} />
+              <HtmlContent html={overOnsText} />
             </div>
           </div>
 
@@ -62,7 +78,7 @@ export default async function AboutUsPage() {
             className="py-15 sm:px-[38px] px-5"
           >
             <Title
-              title_text={aboutUsData.metadata.onze_expertise}
+              title_text={onzeExpertise}
               className={"text-secondary-foreground mb-0"}
             />
             <ul className="pb-7.5 pt-[75px] flex lg:flex-col flex-row flex-wrap lg:flex-nowrap gap-x-3 lg:gap-x-0 gap-y-[20px] text-secondary-foreground">
@@ -112,28 +128,30 @@ export default async function AboutUsPage() {
             </div>
             <div className="text-primary-foreground">
               <div className="text-lg !leading-160">
-                <HtmlContent html={aboutUsData.metadata.ons_verhaal} />
+                <HtmlContent html={onsVerhaalText} />
               </div>
             </div>
           </div>
         </div>
 
         {/* Our Process Section */}
-        <div className="mt-32">
-          <Title
-            title_text="Ons Proces"
-            className="text-primary-foreground mb-12.5"
-          />
-          <div className="grid md:grid-cols-3 gap-8">
-            {aboutUsData.metadata.ons_proces.map((process, index) => (
-              <div key={index} className="bg-secondary/10 p-10 rounded-md hover:shadow-lg transition-shadow duration-300">
-                <div className="text-primary-foreground text-lg !leading-160">
-                  <HtmlContent html={process.ons_proces} />
+        {onsProces && onsProces.length > 0 && (
+          <div className="mt-32">
+            <Title
+              title_text="Ons Proces"
+              className="text-primary-foreground mb-12.5"
+            />
+            <div className="grid md:grid-cols-3 gap-8">
+              {onsProces.map((process, index) => (
+                <div key={index} className="bg-secondary/10 p-10 rounded-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-primary-foreground text-lg !leading-160">
+                    <HtmlContent html={process?.ons_proces || ''} />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Team Section */}
         <div className="mt-32">

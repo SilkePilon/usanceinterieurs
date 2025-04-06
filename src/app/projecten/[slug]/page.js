@@ -78,12 +78,12 @@ export default async function ProjectSinglePage({ params }) {
         >
           <div className="grid lg:grid-cols-[65%_auto] gap-[38px]">
             <div className="relative after:absolute sm:after:-left-12.5 after:-left-5 after:top-1/2 after:-translate-y-1/2 after:w-[1px] sm:after:h-[130%] after:h-[120%] after:bg-primary sm:ml-12.5 ml-5">
-              <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
+              <h1 className="text-primary-foreground [font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110">
                 {project.title}
               </h1>
               <span className="inline-block w-[300px] h-[1px] bg-primary"></span>
               <div
-                className="text-2xl sm:text-3xl 2sm:text-4xl !leading-160 text-primary-foreground mt-[18px] project-description"
+                className="lg:text-lg sm:text-base text-sm !leading-160 text-primary-foreground mt-[18px] project-description"
                 dangerouslySetInnerHTML={{
                   __html: project.metadata.description,
                 }}
@@ -196,25 +196,16 @@ export default async function ProjectSinglePage({ params }) {
         {/* Reference Projects Section */}
         {referenceProjects.length > 0 && (
           <div className="container mt-32">
-            <Title
-              title_text="Andere projecten"
-              className="text-primary-foreground mb-16"
-            />
+            <h1 className="text-primary-foreground [font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110">
+                {project.title}
+            </h1>
             <RelatedProjects projects={referenceProjects} />
           </div>
         )}
 
         {/* Related Projects Section */}
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      {/* <TeamTwo /> */}
-      {/* <Feedback /> */}
+
     </section>
   );
 }

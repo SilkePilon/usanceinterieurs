@@ -25,7 +25,7 @@ const ProjectGallerySlider = ({ images }) => {
     <div className="relative pt-16 md:pt-20">
       {/* Desktop version with slider and thumbnails */}
       <div className="hidden sm:block">
-        <div className="max-h-[80vh] min-h-[600px]">
+        <div className="w-full max-w-[1920px] mx-auto relative" style={{ aspectRatio: '16/9' }}>
           <Swiper
             slidesPerView={1}
             loop
@@ -39,21 +39,23 @@ const ProjectGallerySlider = ({ images }) => {
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            className="h-full"
+            className="h-full w-full"
           >
             {images.map((image, index) => (
-              <SwiperSlide key={index}>
-                <div className="relative w-full h-[80vh] min-h-[600px]">
-                  <Image
-                    src={image.imgix_url}
-                    alt={`Project image ${index + 1}`}
-                    fill
-                    style={{ zIndex: "1" }}
-                    className="object-cover"
-                    priority={index === 0}
-                    placeholder="blur"
-                    blurDataURL={staticBluarDataUrl}
-                  />
+              <SwiperSlide key={index} className="flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                    <Image
+                      src={image.imgix_url}
+                      alt={`Project image ${index + 1}`}
+                      fill
+                      style={{ zIndex: "1" }}
+                      className="object-contain"
+                      priority={index === 0}
+                      placeholder="blur"
+                      blurDataURL={staticBluarDataUrl}
+                    />
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -75,36 +77,36 @@ const ProjectGallerySlider = ({ images }) => {
 
         {images.length > 1 && (
           <div 
-            className="container lg:flex lg:flex-row lg:justify-start mt-8" 
-            style={{ position: "relative", zIndex: "20", maxWidth: "65%" }}
+            className="absolute bottom-8 left-8 z-30 bg-black/50 p-4 rounded-lg backdrop-blur-sm" 
+            style={{ maxWidth: "50%" }}
           >
             <Swiper
               onSwiper={setThumbsSwiper}
               loop={true}
-              spaceBetween={27}
+              spaceBetween={10}
               speed={500}
               breakpoints={{
                 300: {
                   slidesPerView: 2,
-                  spaceBetween: 10,
+                  spaceBetween: 8,
                 },
                 750: {
                   slidesPerView: 3,
-                  spaceBetween: 20,
+                  spaceBetween: 10,
                 },
                 1320: {
                   slidesPerView: 4,
-                  spaceBetween: 30,
+                  spaceBetween: 12,
                 },
               }}
               freeMode={true}
               watchSlidesProgress={true}
               modules={[FreeMode, Navigation, Thumbs]}
-              className="mt-[35px] relative thumbnail-swiper"
+              className="thumbnail-swiper"
             >
               {images.map((image, index) => (
                 <SwiperSlide key={index} onClick={() => goToSlide(index)}>
-                  <div className="relative w-full h-[120px] cursor-pointer transition-all duration-300 hover:opacity-80 border-2 border-transparent hover:border-primary">
+                  <div className="relative w-full h-[80px] cursor-pointer transition-all duration-300 hover:opacity-100 opacity-70 border border-white/30 hover:border-white">
                     <Image
                       src={image.imgix_url}
                       alt={`Thumbnail ${index + 1}`}
@@ -135,20 +137,22 @@ const ProjectGallerySlider = ({ images }) => {
               delay: 3000,
               disableOnInteraction: false,
             }}
-            className="h-full"
+            className="h-full w-full"
           >
             {images.map((image, index) => (
-              <SwiperSlide key={index}>
-                <div className="relative w-full h-full">
-                  <Image
-                    src={image.imgix_url}
-                    alt={`Project image ${index + 1}`}
-                    fill
-                    className="object-contain"
-                    priority={index === 0}
-                    placeholder="blur"
-                    blurDataURL={staticBluarDataUrl}
-                  />
+              <SwiperSlide key={index} className="flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                    <Image
+                      src={image.imgix_url}
+                      alt={`Project image ${index + 1}`}
+                      fill
+                      className="object-contain"
+                      priority={index === 0}
+                      placeholder="blur"
+                      blurDataURL={staticBluarDataUrl}
+                    />
+                  </div>
                 </div>
               </SwiperSlide>
             ))}

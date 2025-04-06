@@ -61,7 +61,7 @@ const Home3 = () => {
               "Elkaar aanvullen voor optimaal resultaat geeft positieve spanning en energie."
             }
             button_text={"Meer Over Ons"}
-            link={"/about-us"}
+            link={"/over-ons"}
           />
         </div>
         <div className="container lg:pt-[340px] 2sm:pt-20 pt-14">
