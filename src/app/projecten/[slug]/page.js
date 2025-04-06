@@ -33,8 +33,6 @@ async function getProjectData(slug) {
     })
     .props("slug,title,metadata")
     .depth(1);
-
-    console.log(project)
   // Get reference projects if they exist
   let referenceProjects = [];
   if (project.object.metadata.reference_projects?.length > 0) {
