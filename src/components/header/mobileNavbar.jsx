@@ -121,7 +121,7 @@ const MobileNavbar = () => {
           {/* Content with opacity transition for smoother effect */}
           <div className={`transition-opacity duration-500 ${isMenuActive ? 'opacity-100' : 'opacity-0'}`}>
             {/* Contact section */}
-            <div className="py-4 border-b border-gray-200">
+            <div className="py-4">
               <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-3">
                 Contact
               </h3>
@@ -157,35 +157,21 @@ const MobileNavbar = () => {
             </div>
 
             {/* Navigation section */}
-            <div className="py-4 border-b border-gray-200">
+            <div className="py-4">
               <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-3">
-                Navigation
+                Navigatie
               </h3>
               <div className="space-y-2">
                 <div className="group">
                   <button
                     className="flex items-center gap-3 w-full px-3 py-2 text-sm text-primary-foreground text-left"
-                    onClick={(e) => handleMenuClick(e, "/#about")}
+                    onClick={(e) => handleMenuClick(e, "/over-ons")}
                   >
                     <svg className="h-5 w-5 text-primary-foreground" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                     </svg>
                     <span className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
                       Over ons
-                    </span>
-                  </button>
-                </div>
-                <div className="group">
-                  <button
-                    className="flex items-center gap-3 w-full px-3 py-2 text-sm text-primary-foreground text-left"
-                    onClick={(e) => handleMenuClick(e, "/#services")}
-                  >
-                    <svg className="h-5 w-5 text-primary-foreground" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
-                      <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
-                    </svg>
-                    <span className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-                      Onze diensten
                     </span>
                   </button>
                 </div>
