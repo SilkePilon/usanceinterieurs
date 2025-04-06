@@ -137,12 +137,14 @@ export default async function AboutUsPage() {
               </div>
             </div>
             <div className="relative w-full h-[300px] mt-[52px]">
-              <Image
-                src={foto2}
-                alt="In de media"
-                fill
-                className="object-cover rounded-lg"
-              />
+              <Link href="/assets/def._Nunspeet_mag_2024_03_p48_v4.pdf" target="_blank">
+                <Image
+                  src={foto2}
+                  alt="In de media"
+                  fill
+                  className="object-cover rounded-lg cursor-pointer"
+                />
+              </Link>
             </div>
           </div>
         </div>
