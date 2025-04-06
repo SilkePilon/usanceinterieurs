@@ -48,31 +48,56 @@ async function getAboutUsContent() {
 export default async function AboutUsPage() {
   const aboutUsData = await getAboutUsContent();
   
-  // Default values if data is missing
+  // Get data from CMS with fallbacks
   const pageTitle = aboutUsData?.title || 'Over Ons';
-  const overOnsText = aboutUsData?.metadata?.over_ons || '';
-  const onzeExpertise = aboutUsData?.metadata?.onze_expertise || 'Onze Expertise';
-  const onzeExpertiseTekst = aboutUsData?.metadata?.onze_expertise_tekst || '';
-  const onsVerhaalText = aboutUsData?.metadata?.ons_verhaal || '';
-  const onsProces = aboutUsData?.metadata?.ons_proces || [];
-  
-  const expertiseItems = parseExpertiseList(onzeExpertiseTekst);
+  const onsVerhaal = aboutUsData?.metadata?.titel_1 || 'Ons Verhaal';
+  const onsVerhaalText = aboutUsData?.metadata?.tekst_1 || '';
+  const onzeExpertise = aboutUsData?.metadata?.title_2 || 'Onze Expertise';
+  const onzeExpertiseTekst = aboutUsData?.metadata?.tekst_2 || '';
+  const inDeMedia = aboutUsData?.metadata?.titel_3 || 'In de media';
+  const inDeMediaText = aboutUsData?.metadata?.tekst_3 || '';
+  const workshops = aboutUsData?.metadata?.titel_4 || 'Workshops';
+  const workshopsText = aboutUsData?.metadata?.tekst_5 || '';
+  const tekst3 = aboutUsData?.metadata?.tekst_3 || '';
+
+  // Get images from CMS
+  const foto1 = aboutUsData?.metadata?.foto_1?.imgix_url || '/images/about-image.jpg';
+  const foto2 = aboutUsData?.metadata?.foto_2?.imgix_url || '/images/about-image-2.jpg';
+  const foto3 = aboutUsData?.metadata?.foto_3?.imgix_url || '/images/about-image-3.jpg';
+
+  // Parse expertise content
+  const expertiseContent = parseExpertiseList(onzeExpertiseTekst);
 
   return (
     <section className="about-us">
       <div className="container 2sm:mt-[156px] sm:mt-30 mt-20">
-        {/* Hero Section */}
+        {/* Top Section: Ons Verhaal and Expertise */}
         <div className="grid lg:grid-cols-[65%_auto] gap-[38px]">
+          {/* Main Content Column */}
           <div className="relative after:absolute sm:after:-left-12.5 after:-left-5 after:top-1/2 after:-translate-y-1/2 after:w-[1px] sm:after:h-[130%] after:h-[120%] after:bg-primary sm:ml-12.5 ml-5">
-            <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
-              {pageTitle}
-            </h1>
-            <span className="inline-block w-[300px] h-[1px] bg-primary"></span>
-            <div className="text-2xl sm:text-3xl 2sm:text-4xl !leading-160 text-primary-foreground mt-[18px]">
-              <HtmlContent html={overOnsText} />
+            <Title
+              title_text={onsVerhaal}
+              className="text-primary mb-8"
+            />
+            <div className="text-lg !leading-160 text-primary-foreground">
+              <HtmlContent html={onsVerhaalText} />
+            </div>
+            {/* Full width image with adjusted sizing */}
+            <div className="mt-10 relative w-full">
+              <div className="relative w-full aspect-[16/9] max-h-[500px]">
+                <Image
+                  src={foto1}
+                  alt="Modern interieurontwerp"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 85vw"
+                  priority
+                  className="object-cover rounded-lg"
+                />
+              </div>
             </div>
           </div>
 
+          {/* Expertise Sidebar */}
           <div
             style={{ background: "#2a2b2d" }}
             className="py-15 sm:px-[38px] px-5"
@@ -81,25 +106,9 @@ export default async function AboutUsPage() {
               title_text={onzeExpertise}
               className={"text-secondary-foreground mb-0"}
             />
-            <ul className="pb-7.5 pt-[75px] flex lg:flex-col flex-row flex-wrap lg:flex-nowrap gap-x-3 lg:gap-x-0 gap-y-[20px] text-secondary-foreground">
-              {expertiseItems.map((item, index) => (
-                <li key={index}>
-                  {item.title && (
-                    <strong 
-                      className="block text-2xl mb-1.5" 
-                      dangerouslySetInnerHTML={{ __html: item.title }}
-                    ></strong>
-                  )}
-                  {item.content && (
-                    <span 
-                      className="block" 
-                      dangerouslySetInnerHTML={{ __html: item.content }}
-                    ></span>
-                  )}
-                </li>
-              ))}
-            </ul>
-
+            <div className="py-7.5 text-secondary-foreground">
+              <HtmlContent html={onzeExpertiseTekst} />
+            </div>
             <Link href="/#projects">
               <ButtonOutline className="text-secondary-foreground border-secondary whitespace-nowrap hover:text-primary-foreground hover:bg-secondary">
                 Bekijk Projecten
@@ -108,95 +117,55 @@ export default async function AboutUsPage() {
           </div>
         </div>
 
-        {/* Our Story Section */}
-        <div className="mt-32">
-          <Title
-            title_text="Ons Verhaal"
-            className="text-primary-foreground mb-12.5"
-          />
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+        {/* Additional Text Section (replacing previous image location) */}
+        <div className="mt-20 sm:ml-12.5 ml-5">
+          <div className="text-lg !leading-160 text-primary-foreground">
+            <HtmlContent html={tekst3} />
+          </div>
+        </div>
+
+        {/* In de Media Section */}
+        <div className="mt-20 sm:ml-12.5 ml-5">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
-              <div className="relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070"
-                  alt="Modern interieurontwerp woonkamer"
-                  width={600}
-                  height={400}
-                  className="rounded-md"
-                />
+              <Title
+                title_text={inDeMedia}
+                className="text-primary mb-8"
+              />
+              <div className="text-lg !leading-160 text-primary-foreground">
+                <HtmlContent html={inDeMediaText} />
               </div>
             </div>
-            <div className="text-primary-foreground">
-              <div className="text-lg !leading-160">
-                <HtmlContent html={onsVerhaalText} />
-              </div>
+            <div className="relative w-full h-[300px] mt-[52px]">
+              <Image
+                src={foto2}
+                alt="In de media"
+                fill
+                className="object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
 
-        {/* Our Process Section */}
-        {onsProces && onsProces.length > 0 && (
-          <div className="mt-32">
-            <Title
-              title_text="Ons Proces"
-              className="text-primary-foreground mb-12.5"
-            />
-            <div className="grid md:grid-cols-3 gap-8">
-              {onsProces.map((process, index) => (
-                <div key={index} className="bg-secondary/10 p-10 rounded-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="text-primary-foreground text-lg !leading-160">
-                    <HtmlContent html={process?.ons_proces || ''} />
-                  </div>
-                </div>
-              ))}
+        {/* Workshops Section */}
+        <div className="mt-20 mb-20 sm:ml-12.5 ml-5">
+          <Title
+            title_text={workshops}
+            className="text-primary mb-8"
+          />
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="relative w-full h-[300px]">
+              <Image
+                src={foto3}
+                alt="Workshops"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+            <div className="text-lg !leading-160 text-primary-foreground">
+              <HtmlContent html={workshopsText} />
             </div>
           </div>
-        )}
-
-        {/* Team Section */}
-        <div className="mt-32">
-          <h1 className="text-primary-foreground [font-size:_clamp(3px,5vw,50px)] font-extrabold leading-110">
-            Ons Team
-          </h1>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div className="team-member text-center">
-              <div className="relative mb-6 overflow-hidden rounded-md">
-                <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974"
-                  alt="Hoofdontwerper"
-                  width={350}
-                  height={400}
-                  className="w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-primary-foreground">Dennis de Vries</h3>
-              <p className="text-lg text-primary-foreground/80">Hoofdontwerper</p>
-            </div>
-            <div className="team-member text-center">
-              <div className="relative mb-6 overflow-hidden rounded-md">
-                <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976"
-                  alt="Interieuradviseur"
-                  width={350}
-                  height={400}
-                  className="w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-primary-foreground">Mariska Janssen</h3>
-              <p className="text-lg text-primary-foreground/80">Interieuradviseur</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Contact CTA Section */}
-        <div className="mt-32 mb-20 bg-primary/10 p-16 rounded-lg text-center">
-          <h2 className="text-4xl font-bold mb-4 text-primary-foreground">Klaar om uw droominterieur te realiseren?</h2>
-          <p className="text-xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-            Neem contact met ons op voor een vrijblijvend gesprek over de mogelijkheden voor uw project.
-          </p>
-          <Link href="/contact">
-            <ButtonOutline className="text-lg px-8 py-4">Contact Opnemen</ButtonOutline>
-          </Link>
         </div>
       </div>
     </section>
