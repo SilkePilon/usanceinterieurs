@@ -3,6 +3,7 @@ import Title from "@/components/ui/title";
 import ButtonOutline from "@/components/ui/buttons/buttonOutline";
 import Link from "next/link";
 import { createBucketClient } from '@cosmicjs/sdk';
+import PdfPreview from "@/components/ui/PdfPreview";
 
 // Custom component to render HTML content safely
 const HtmlContent = ({ html }) => {
@@ -137,12 +138,10 @@ export default async function AboutUsPage() {
               </div>
             </div>
             <div className="relative w-full h-[300px] mt-[52px]">
-              <Link href="/assets/def._Nunspeet_mag_2024_03_p48_v4.pdf" target="_blank">
-                <Image
-                  src={foto2}
-                  alt="In de media"
-                  fill
-                  className="object-cover rounded-lg cursor-pointer"
+              <Link href="/assets/def._Nunspeet_mag_2024_03_p48_v4.pdf" target="_blank" className="block h-full">
+                <PdfPreview 
+                  imageUrl={foto2}
+                  className="h-full"
                 />
               </Link>
             </div>
