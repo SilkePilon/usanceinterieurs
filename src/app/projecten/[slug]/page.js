@@ -81,9 +81,8 @@ export default async function ProjectSinglePage({ params }) {
               <h1 className="text-primary-foreground [font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110">
                 {project.title}
               </h1>
-              <span className="inline-block w-[300px] h-[1px] bg-primary"></span>
-              <div
-                className="lg:text-lg sm:text-base text-sm !leading-160 text-primary-foreground mt-[18px] project-description"
+              <span className="inline-block w-[300px] h-[1px] bg-primary mt-4"></span>
+              <div className="mt-[18px] lg:text-lg sm:text-base text-sm !leading-160 text-primary-foreground project-description"
                 dangerouslySetInnerHTML={{
                   __html: project.metadata.description,
                 }}
@@ -196,10 +195,15 @@ export default async function ProjectSinglePage({ params }) {
         {/* Reference Projects Section */}
         {referenceProjects.length > 0 && (
           <div className="container mt-32">
-            <h1 className="text-primary-foreground [font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110">
-                {project.title}
-            </h1>
-            <RelatedProjects projects={referenceProjects} />
+            <div className="relative sm:ml-12.5 ml-5">
+              <h1 className="text-primary-foreground [font-size:_clamp(18px,3vw,36px)] font-extrabold leading-110">
+                  Andere projecten
+              </h1>
+              <span className="inline-block w-[300px] h-[1px] bg-primary mt-4"></span>
+              <div className="mt-[18px]">
+                <RelatedProjects projects={referenceProjects} />
+              </div>
+            </div>
           </div>
         )}
 
