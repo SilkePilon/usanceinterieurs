@@ -90,12 +90,9 @@ const BottomNavbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <>
-      <div 
+    <>      <div 
         ref={navbarRef}
-        className={`bottom-navbar flex flex-col transition-all duration-500 ease-in-out rounded-bl-2xl rounded-br-2xl bg-[#f9fffc] shadow-sm ${
-          isMenuOpen ? 'h-auto pb-4' : 'h-[84px]'
-        }`}
+        className="bottom-navbar flex flex-col rounded-bl-2xl rounded-br-2xl bg-[#f9fffc] shadow-sm"
       >
         {/* Main navbar content */}
         <div className="flex justify-between items-center py-2 h-[84px] bg-[#f9fffc]">
@@ -169,26 +166,19 @@ const BottomNavbar = () => {
                 </div>
               </div>
             </ul>
-          </nav>
-        </div>
-        
-        {/* Expandable menu section - visible even when closed for animation purposes */}
+          </nav>        </div>
+          {/* Expandable menu section - visible even when closed for animation purposes */}
         <div 
-          className={`overflow-hidden bg-[#f9fffc] transition-all duration-500 ease-in-out transform origin-top ${
+          className={`overflow-hidden bg-[#f9fffc] transition-all duration-700 ease-in-out ${
             isMenuOpen 
-              ? 'max-h-[500px] opacity-100 scale-y-100' 
-              : 'max-h-0 opacity-0 scale-y-0'
+              ? 'max-h-[500px]' 
+              : 'max-h-0'
           }`}
-          style={{
-            transitionProperty: "max-height, opacity, transform",
-            willChange: "max-height, opacity, transform"
-          }}
         >
-          <div className={`px-4 py-4 transition-opacity duration-500 ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="col-span-1">
+          <div className="px-4 py-4">
+            <div className="grid grid-cols-2 gap-4">              <div className="col-span-1">
                 <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                  Navigation
+                  Navigatie
                 </h3>
                 <div className="space-y-2">
                   <div className="group">

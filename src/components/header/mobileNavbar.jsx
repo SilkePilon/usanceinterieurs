@@ -120,20 +120,18 @@ const MobileNavbar = () => {
               {isMenuActive ? <CloseIcon /> : <MenuIcon />}
             </button>
           </div>
-        </div>
-
-        {/* Expandable menu content - always present for animation */}
+        </div>        {/* Expandable menu content - always present for animation */}
         <div 
           className={`overflow-hidden bg-[#f9fffc] transition-all duration-500 ease-in-out transform origin-top ${
-            isMenuActive ? 'max-h-[1000px] opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-0'
+            isMenuActive ? 'max-h-[1000px] scale-y-100' : 'max-h-0 scale-y-0'
           }`}
           style={{
-            transitionProperty: "max-height, opacity, transform",
-            willChange: "max-height, opacity, transform"
+            transitionProperty: "max-height, transform",
+            willChange: "max-height, transform"
           }}
         >
-          {/* Content with opacity transition for smoother effect */}
-          <div className={`transition-opacity duration-500 ${isMenuActive ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Content without conflicting opacity transition */}
+          <div>
             {/* Contact section */}
             <div className="py-4">
               <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-3">
