@@ -17,7 +17,6 @@ const BottomNavbar = () => {
   const [categories, setCategories] = useState([]);
   const navbarRef = useRef(null);
   const buttonRef = useRef(null);
-
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -33,7 +32,22 @@ const BottomNavbar = () => {
             .filter(Boolean)
         )];
 
-        setCategories(uniqueCategories);
+        // Desired order of categories (same as main page)
+        const desiredOrder = [
+          "Meubelshowroom Concepts & Styling",
+          "Retail Interieurontwerp", 
+          "Bedrijven Interieurontwerp",
+          "Particulieren Interieurontwerp",
+          "Woninginterieur Renovatie",
+          "bouwbegeleiding",
+        ];
+
+        // Sort categories by desired order
+        const sortedCategories = uniqueCategories.sort(
+          (a, b) => desiredOrder.indexOf(a) - desiredOrder.indexOf(b)
+        );
+
+        setCategories(sortedCategories);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
