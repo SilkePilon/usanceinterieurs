@@ -2,6 +2,7 @@ import favicon from "@/app/favicon.ico";
 import Footer from "@/components/footer";
 import HeaderThree from "@/components/header/headerThree";
 import ProgressCircle from "@/components/ui/scrollCircle";
+import HashScrollHandler from "@/components/ui/hashScrollHandler";
 import LayoutChildren from "@/lib/layoutChildren";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -37,8 +38,8 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           </div>
-          {/* ------ body line end */}
-          <ProgressCircle />
+          {/* ------ body line end */}          <ProgressCircle />
+          <HashScrollHandler />
           <LayoutChildren>
             {" "}
             <div>

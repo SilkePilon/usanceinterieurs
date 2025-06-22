@@ -1,3 +1,4 @@
+"use client";
 import ProjectArchive from "@/app/(group1)/project-archive/page";
 import AboutOne from "@/components/section/about/aboutOne";
 import Feedback from "@/components/section/feedback";
@@ -9,11 +10,12 @@ import SectionTitle from "@/components/ui/sectionTitle";
 import { productData } from "@/lib/fackData/productData";
 import { teamData } from "@/lib/fackData/teamData";
 import { cardSlideAnimation } from "@/lib/utils";
-export const metadata = {
-  title: "Architronix -- Home-3",
-  description: "Architronix is a next js and tailwind css website",
-};
+import useHashScroll from "@/hooks/useHashScroll";
+
 const Home3 = () => {
+  // Use the hash scroll hook to handle scrolling to sections
+  useHashScroll();
+
   return (
     <>
       <BannerThree />
@@ -103,9 +105,7 @@ const Home3 = () => {
           <BlogSlider data={blogData.slice(0, 4)} />
         </div>
       </section> */}
-      {/* -------- blog slider end */}
-
-      {/* <Feedback /> */}
+      {/* -------- blog slider end */}      {/* <Feedback /> */}
     </>
   );
 };

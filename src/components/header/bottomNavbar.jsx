@@ -55,21 +55,32 @@ const BottomNavbar = () => {
 
     fetchCategories();
   }, []);
-
   const handleMenuClick = (e, href) => {
     e.preventDefault();
     e.stopPropagation();
     setIsMenuOpen(false);
     
-    const targetId = href.replace('/#', '');
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    // Check if href is a hash link (starts with /#)
+    if (href.startsWith('/#')) {
+      const targetId = href.replace('/#', '');
+      
+      // Check if we're already on the home page
+      if (window.location.pathname === '/') {
+        // We're on home page, scroll directly to the section
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      } else {
+        // We're on a different page, navigate to home page with hash
+        // The scrolling will be handled by the useEffect in the layout or page component
+        window.location.href = href;
+      }
     } else {
+      // Regular navigation for non-hash links
       window.location.href = href;
     }
   };
