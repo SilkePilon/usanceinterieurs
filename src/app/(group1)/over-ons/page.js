@@ -33,45 +33,68 @@ async function getAboutUsContent() {
     });
 
     const response = await cosmic.objects.findOne({
-      type: "about-us",
+      type: "over-ons",
       slug: "over-ons"
     })
       .props("slug,title,metadata,type")
       .depth(1);
 
+    console.log('Cosmic JS Response:', response); // Debug log
     return response?.object || null;
   } catch (error) {
     console.error('Error fetching about us content:', error);
-    return null;
+    throw error; // Re-throw to see the actual error
   }
 }
 
 export default async function AboutUsPage() {
-  const aboutUsData = await getAboutUsContent();
+  let aboutUsData = null;
+  
+  try {
+    aboutUsData = await getAboutUsContent();
+  } catch (error) {
+    console.error('Failed to load about us content:', error);
+    // Continue with fallback content
+  }
   
   // Get data from CMS with fallbacks
   const pageTitle = aboutUsData?.title || 'Over Ons';
-  const onsVerhaal = aboutUsData?.metadata?.titel_1 || 'Ons Verhaal';
+  const onsVerhaal = aboutUsData?.metadata?.titel_1 || 'ONZE VAKKENNIS EN ERVARING';
   const onsVerhaalText = aboutUsData?.metadata?.tekst_1 || '';
-  const onzeExpertise = aboutUsData?.metadata?.title_2 || 'Onze Expertise';
+  const onzeExpertise = aboutUsData?.metadata?.title_2 || 'ONZE EXPERTISES';
   const onzeExpertiseTekst = aboutUsData?.metadata?.tekst_2 || '';
-  const inDeMedia = aboutUsData?.metadata?.titel_3 || 'In de media';
-  const inDeMediaText = aboutUsData?.metadata?.tekst_3 || '';
-  const workshops = aboutUsData?.metadata?.titel_4 || 'Workshops';
+  const inDeMedia = aboutUsData?.metadata?.titel_3 || 'IN DE MEDIA';
+  const inDeMediaText = aboutUsData?.metadata?.tekst_4 || '';
+  const workshops = aboutUsData?.metadata?.titel_4 || 'WORKSHOPS';
   const workshopsText = aboutUsData?.metadata?.tekst_5 || '';
   const tekst3 = aboutUsData?.metadata?.tekst_3 || '';
 
-  // Get images from CMS
-  const foto1 = aboutUsData?.metadata?.foto_1?.imgix_url || '/images/about-image.jpg';
-  const foto2 = aboutUsData?.metadata?.foto_2?.imgix_url || '/images/about-image-2.jpg';
-  const foto3 = aboutUsData?.metadata?.foto_3?.imgix_url || '/images/about-image-3.jpg';
+  // Debug: Log the data we received
+  if (process.env.NODE_ENV === 'development') {
+    console.log('About Us Data:', {
+      hasData: !!aboutUsData,
+      title: aboutUsData?.title,
+      metadata: aboutUsData?.metadata ? Object.keys(aboutUsData.metadata) : 'No metadata'
+    });
+  }  // Get images from CMS
+  const foto1 = aboutUsData?.metadata?.foto_1?.imgix_url || aboutUsData?.metadata?.foto_1?.url || '/assets/images/about-image.jpg';
+  const foto2 = aboutUsData?.metadata?.foto_2?.imgix_url || aboutUsData?.metadata?.foto_2?.url || '/assets/images/about-image-2.jpg';
+  const foto3 = aboutUsData?.metadata?.foto_3?.imgix_url || aboutUsData?.metadata?.foto_3?.url || '/assets/images/about-image-3.jpg';
 
   // Parse expertise content
   const expertiseContent = parseExpertiseList(onzeExpertiseTekst);
-
   return (
     <section className="about-us">
       <div className="container 2sm:mt-[156px] sm:mt-30 mt-20">
+        {/* Show loading/error state if no data */}
+        {!aboutUsData && (
+          <div className="text-center py-20">
+            <p className="text-lg text-primary-foreground">
+              Even gedult aub...
+            </p>
+          </div>
+        )}
+        
         {/* Top Section: Ons Verhaal and Expertise */}
         <div className="grid lg:grid-cols-[65%_auto] gap-[38px]">
           {/* Main Content Column */}
