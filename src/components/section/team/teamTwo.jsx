@@ -14,7 +14,7 @@ const temaList = [
     {
         id: 1,
         img: team_13,
-        link: "/team-single",
+        link: "/over-ons",
         name: "Michael Johnson",
         position: "Lead Designer",
         desc: "As the lead designer, Michael brought creativity and innovation to the project. His visionary approach guided the entire design process."
@@ -22,7 +22,7 @@ const temaList = [
     {
         id: 2,
         img: team_14,
-        link: "/team-single",
+        link: "/over-ons",
         name: "Michael Johnson",
         position: "Lead Designer",
         desc: "As the lead designer, Michael brought creativity and innovation to the project. His visionary approach guided the entire design process."
@@ -30,7 +30,7 @@ const temaList = [
     {
         id: 3,
         img: team_15,
-        link: "/team-single",
+        link: "/over-ons",
         name: "Michael Johnson",
         position: "Lead Designer",
         desc: "As the lead designer, Michael brought creativity and innovation to the project. His visionary approach guided the entire design process."
@@ -38,7 +38,7 @@ const temaList = [
     {
         id: 4,
         img: team_16,
-        link: "/team-single",
+        link: "/over-ons",
         name: "Michael Johnson",
         position: "Lead Designer",
         desc: "As the lead designer, Michael brought creativity and innovation to the project. His visionary approach guided the entire design process."
@@ -46,7 +46,7 @@ const temaList = [
     {
         id: 5,
         img: credit_image_1,
-        link: "/team-single",
+        link: "/over-ons",
         name: "Layero Engenharia",
         position: "Engineers",
         desc: "",
@@ -54,7 +54,7 @@ const temaList = [
     {
         id: 6,
         img: credit_image_2,
-        link: "/team-single",
+        link: "/over-ons",
         name: "Maddison & Walker",
         position: "Interior Supplier",
         desc: "",

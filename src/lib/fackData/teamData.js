@@ -28,8 +28,7 @@ export const teamData = [
         media: "LI",
       },
     ],
-  },
-  {
+  },  {
     id: 2,
     img: team_2,
     name: "Dennis van den Dool",
@@ -44,11 +43,6 @@ export const teamData = [
         id: 2,
         link: "https://www.instagram.com/usanceinterieurs/",
         media: "IN",
-      },
-      {
-        id: 3,
-        link: "https://www.linkedin.com/in/mariska-van-der-velde-003b4321/",
-        media: "LI",
       },
     ],
   },
