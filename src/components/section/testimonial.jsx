@@ -18,8 +18,8 @@ const Testimonial = ({ text_muted, bg_muted }) => {
         const fetchTestimonials = async () => {
             try {
                 const cosmic = createBucketClient({
-                    bucketSlug: 'usance-production',
-                    readKey: 'I3jedjwVkj48hIM1WRP6qGKIy2atHx0knIxGxWIDSrr5J7ODZ2'
+                    bucketSlug: process.env.COSMIC_BUCKET_SLUG || 'usance-production',
+                    readKey: process.env.COSMIC_READ_KEY
                 });
                 
                 const response = await cosmic.objects.find({
