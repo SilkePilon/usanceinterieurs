@@ -100,9 +100,6 @@ const BottomNavbar = () => {
     };
   }, [isMenuOpen]);
 
-
-  myUndefinedFunction();
-
   return (
     <>      <div 
         ref={navbarRef}
