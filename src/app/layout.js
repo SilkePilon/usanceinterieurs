@@ -13,16 +13,107 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Usance Interieurs",
-  description: "Usance Interieurs - Interior Design Studio",
+  title: "Usance Interieurs - Interieurontwerp op maat",
+  description: "Usance Interieurs denkt met u mee en zal altijd voor het interieur van uw woning, bedrijf, winkel of product het nut als uitgangspunt nemen. Wij werken niet in eigen stijl maar op eigen wijze.",
+  keywords: "interieurontwerp, interieuradvies, meubelshowroom, retail interieur, bedrijfsinterieur, particulieren interieur, woninginterieur renovatie, bouwbegeleiding, Usance Interieurs",
+  authors: [{ name: "Usance Interieurs" }],
+  creator: "Usance Interieurs",
+  publisher: "Usance Interieurs",
   icons: {
     icon: `${favicon.src}`,
+  },
+  metadataBase: new URL('https://test.usanceinterieurs.nl'),
+  openGraph: {
+    title: "Usance Interieurs - Interieurontwerp op maat",
+    description: "Wij werken niet in eigen stijl maar op eigen wijze. Een op maat gemaakt advies waarin volledig op uw wensen en eisen wordt ingespeeld, tot en met de realisatie.",
+    url: "https://test.usanceinterieurs.nl",
+    siteName: "Usance Interieurs",
+    images: [
+      {
+        url: "/assets/images/hero_img.png",
+        width: 1200,
+        height: 630,
+        alt: "Usance Interieurs - Interieurontwerp op maat",
+      },
+    ],
+    locale: "nl_NL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Usance Interieurs - Interieurontwerp op maat",
+    description: "Wij werken niet in eigen stijl maar op eigen wijze. Een op maat gemaakt advies waarin volledig op uw wensen en eisen wordt ingespeeld.",
+    images: ["/assets/images/hero_img.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://test.usanceinterieurs.nl",
+  },
+  contact: {
+    email: "info@usanceinterieurs.nl",
+    phone: "+31630305760",
   },
 };
 
 export default function RootLayout({ children }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://test.usanceinterieurs.nl",
+    "name": "Usance Interieurs",
+    "description": "Usance Interieurs denkt met u mee en zal altijd voor het interieur van uw woning, bedrijf, winkel of product het nut als uitgangspunt nemen. Wij werken niet in eigen stijl maar op eigen wijze.",
+    "url": "https://test.usanceinterieurs.nl",
+    "telephone": "+31630305760",
+    "email": "info@usanceinterieurs.nl",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Zuiderzeestraatweg west 12a",
+      "addressLocality": "Doornspijk",
+      "postalCode": "8085 AE",
+      "addressCountry": "NL"
+    },
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Mariska van der Velde",
+        "jobTitle": "Interieur- en winkelvormgever"
+      },
+      {
+        "@type": "Person",
+        "name": "Dennis van den Dool",
+        "jobTitle": "Interieurbouwer / Allround uitvoerder"
+      }
+    ],
+    "serviceArea": {
+      "@type": "Country",
+      "name": "Netherlands"
+    },
+    "priceRange": "€€€",
+    "image": "https://test.usanceinterieurs.nl/assets/images/hero_img.png",
+    "logo": "https://test.usanceinterieurs.nl/favicon.ico",
+    "sameAs": [
+      "https://www.instagram.com/usanceinterieurs"
+    ]
+  };
+
   return (
-    <html lang="en">
+    <html lang="nl">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`${plus_jakarta_sans.variable}`}
         suppressHydrationWarning={true}
