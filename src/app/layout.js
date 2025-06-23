@@ -6,6 +6,7 @@ import HashScrollHandler from "@/components/ui/hashScrollHandler";
 import LayoutChildren from "@/lib/layoutChildren";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
 const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -22,11 +23,11 @@ export const metadata = {
   icons: {
     icon: `${favicon.src}`,
   },
-  metadataBase: new URL('https://test.usanceinterieurs.nl'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://test.usanceinterieurs.nl'),
   openGraph: {
     title: "Usance Interieurs - Interieurontwerp op maat",
     description: "Wij werken niet in eigen stijl maar op eigen wijze. Een op maat gemaakt advies waarin volledig op uw wensen en eisen wordt ingespeeld, tot en met de realisatie.",
-    url: "https://test.usanceinterieurs.nl",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://test.usanceinterieurs.nl",
     siteName: "Usance Interieurs",
     images: [
       {
@@ -57,24 +58,28 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: "https://test.usanceinterieurs.nl",
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://test.usanceinterieurs.nl",
   },
   contact: {
-    email: "info@usanceinterieurs.nl",
+    email: process.env.NEXT_PUBLIC_COMPANY_EMAIL || "info@usanceinterieurs.nl",
     phone: "+31630305760",
   },
 };
 
 export default function RootLayout({ children }) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://test.usanceinterieurs.nl";
+  const companyEmail = process.env.NEXT_PUBLIC_COMPANY_EMAIL || "info@usanceinterieurs.nl";
+  const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/usanceinterieurs";
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://test.usanceinterieurs.nl",
+    "@id": siteUrl,
     "name": "Usance Interieurs",
     "description": "Usance Interieurs denkt met u mee en zal altijd voor het interieur van uw woning, bedrijf, winkel of product het nut als uitgangspunt nemen. Wij werken niet in eigen stijl maar op eigen wijze.",
-    "url": "https://test.usanceinterieurs.nl",
+    "url": siteUrl,
     "telephone": "+31630305760",
-    "email": "info@usanceinterieurs.nl",
+    "email": companyEmail,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Zuiderzeestraatweg west 12a",
@@ -99,10 +104,10 @@ export default function RootLayout({ children }) {
       "name": "Netherlands"
     },
     "priceRange": "€€€",
-    "image": "https://test.usanceinterieurs.nl/assets/images/hero_img.png",
-    "logo": "https://test.usanceinterieurs.nl/favicon.ico",
+    "image": `${siteUrl}/assets/images/hero_img.png`,
+    "logo": `${siteUrl}/favicon.ico`,
     "sameAs": [
-      "https://www.instagram.com/usanceinterieurs"
+      instagramUrl
     ]
   };
 
@@ -129,15 +134,13 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           </div>
-          {/* ------ body line end */}          <ProgressCircle />
+          {/* ------ body line end */}
+          <ProgressCircle />
           <HashScrollHandler />
           <LayoutChildren>
-            {" "}
-            <div>
-              <HeaderThree />
-              {children}
-              <Footer />
-            </div>
+            <HeaderThree />
+            {children}
+            <Footer />
           </LayoutChildren>
         </div>
       </body>

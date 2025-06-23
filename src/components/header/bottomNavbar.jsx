@@ -100,6 +100,9 @@ const BottomNavbar = () => {
     };
   }, [isMenuOpen]);
 
+
+  myUndefinedFunction();
+
   return (
     <>      <div 
         ref={navbarRef}
@@ -120,11 +123,11 @@ const BottomNavbar = () => {
                 <div className="flex items-center gap-2 group">
                   <EnvelopeIcon className="h-5 w-5 text-primary-foreground" />
                   <a
-                    href="mailto:info@usanceinterieurs.nl"
+                    href={`mailto:${process.env.NEXT_PUBLIC_COMPANY_EMAIL || "info@usanceinterieurs.nl"}`}
                     className="text-primary-foreground text-sm relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
                     style={{ color: "black" }}
                   >
-                    info@usanceinterieurs.nl
+                    {process.env.NEXT_PUBLIC_COMPANY_EMAIL || "info@usanceinterieurs.nl"}
                   </a>
                 </div>
 

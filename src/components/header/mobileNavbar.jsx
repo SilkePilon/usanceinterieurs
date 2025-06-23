@@ -149,12 +149,12 @@ const MobileNavbar = () => {
               </h3>
               <div className="space-y-3">
                 <a
-                  href="mailto:info@usanceinterieurs.nl"
+                  href={`mailto:${process.env.NEXT_PUBLIC_COMPANY_EMAIL || "info@usanceinterieurs.nl"}`}
                   className="flex items-center gap-3 px-3 py-2 text-sm text-primary-foreground group relative"
                 >
                   <EnvelopeIcon className="h-5 w-5 text-primary-foreground" />
                   <span className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-                    info@usanceinterieurs.nl
+                    {process.env.NEXT_PUBLIC_COMPANY_EMAIL || "info@usanceinterieurs.nl"}
                   </span>
                 </a>
                 <a

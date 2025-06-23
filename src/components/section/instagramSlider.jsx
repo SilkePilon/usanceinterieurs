@@ -79,7 +79,7 @@ const InsagramSlider = ({ text_muted, bg_muted }) => {
           sectionName={"Instagram"}
           sectionTitle={"Een beetje aandacht vragen mag toch?"}
           sectionDesc={"Onze tijd besteden wij het liefst aan onze opdrachten, gezin en eigen huis maar soms is het ook fijn om met jullie te delen waar wij zo trots mee bezig zijn."}
-          link={"https://www.instagram.com/usanceinterieurs/"}
+          link={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/usanceinterieurs/"}
           button_text={"Volg Ons"}
           bg_muted={bg_muted}
           text_muted={text_muted}
