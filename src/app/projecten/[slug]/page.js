@@ -9,7 +9,7 @@ import RelatedProjects from "./RelatedProjects";
 import BackButton from "@/components/ui/buttons/BackButton";
 const cosmic = createBucketClient({
   bucketSlug: process.env.COSMIC_BUCKET_SLUG || "usance-production",
-  readKey: process.env.COSMIC_READ_KEY,
+  readKey: "I3jedjwVkj48hIM1WRP6qGKIy2atHx0knIxGxWIDSrr5J7ODZ2",
 });
 
 export async function generateStaticParams() {

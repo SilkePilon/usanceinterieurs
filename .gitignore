@@ -12,27 +12,6 @@
 # next.js
 /.next/
 
-# generated data from cosmic
-/src/data/*.json
-
-wetransfer_voor-silke_2025-01-12_1508.zip
-wetransfer_voor-silke_2025-01-12_1508/
-.env
-.env.local
-package-lock.jsonelp.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
-
-# testing
-/coverage
-
-# next.js
-/.next/
-
 wetransfer_voor-silke_2025-01-12_1508.zip
 wetransfer_voor-silke_2025-01-12_1508/
 .env
